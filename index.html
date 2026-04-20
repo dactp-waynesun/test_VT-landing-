@@ -1073,6 +1073,8 @@
 <div class="switcher">
   <button data-v="A" class="on"><span class="v">i.</span>保守版</button>
   <button data-v="B"><span class="v">ii.</span>大膽版</button>
+  <button data-v="C"><span class="v">iii.</span>媽咪版</button>
+  <button data-v="D"><span class="v">iv.</span>購物台版</button>
 </div>
 
 <!-- ==================== VERSION A ==================== -->
@@ -1903,6 +1905,768 @@
     </div>
   </div>
 </div>
+
+
+<!-- ==================== VERSION C — 桃紅黃 藥妝台風 媽咪版 ==================== -->
+<style>
+  #pageC{
+    --c-pink:#ff2e7e;
+    --c-pink-deep:#e01668;
+    --c-yellow:#ffd400;
+    --c-yellow-soft:#fff4b0;
+    --c-red:#e4002b;
+    --c-cream:#fff9e9;
+    --c-ink:#2a1330;
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--c-yellow-soft);
+    color:var(--c-ink);
+  }
+  #pageC *{font-family:inherit}
+  #pageC .wrap{max-width:720px;margin:0 auto;padding:0 18px}
+  #pageC strong{color:var(--c-red)}
+
+  /* topbar — urgency banner */
+  #pageC .c-top{
+    background:linear-gradient(90deg,var(--c-red) 0%,var(--c-pink) 100%);
+    color:#fff;text-align:center;padding:58px 16px 14px;font-weight:900;letter-spacing:.05em;
+  }
+  #pageC .c-top .t1{font-size:13px;opacity:.92;margin-bottom:4px}
+  #pageC .c-top .t2{font-size:18px}
+  #pageC .c-top .blink{color:var(--c-yellow);animation:blinkC 1s steps(2) infinite}
+  @keyframes blinkC{50%{opacity:.25}}
+
+  /* hero */
+  #pageC .c-hero{
+    background:var(--c-yellow);
+    padding:26px 0 30px;position:relative;overflow:hidden;
+    border-bottom:6px dashed var(--c-pink);
+  }
+  #pageC .c-hero .badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+  #pageC .c-hero .bdg{
+    background:var(--c-red);color:#fff;font-weight:900;font-size:13px;
+    padding:7px 14px;border-radius:6px;box-shadow:3px 3px 0 rgba(0,0,0,.18);
+    transform:rotate(-2deg);
+  }
+  #pageC .c-hero .bdg:nth-child(2){background:var(--c-pink);transform:rotate(1deg)}
+  #pageC .c-hero .bdg:nth-child(3){background:#2a1330;transform:rotate(-1deg)}
+  #pageC .c-hero h1{
+    text-align:center;font-size:36px;line-height:1.25;font-weight:900;
+    color:var(--c-pink-deep);margin:0 16px 14px;
+    text-shadow:3px 3px 0 #fff,6px 6px 0 rgba(224,22,104,.25);
+  }
+  #pageC .c-hero h1 .hl{background:var(--c-red);color:var(--c-yellow);padding:2px 10px;display:inline-block;transform:rotate(-1deg);margin:0 4px}
+  #pageC .c-hero h1 .u{text-decoration:underline wavy var(--c-red);text-underline-offset:6px}
+  #pageC .c-hero .sub{text-align:center;font-size:17px;font-weight:700;line-height:1.7;margin:0 24px}
+  #pageC .c-hero .sub .mark{background:var(--c-yellow);box-shadow:inset 0 -8px 0 #ffb300}
+  #pageC .c-hero .product-row{
+    display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:center;
+    margin:24px 18px 0;background:#fff;border:3px solid var(--c-ink);border-radius:14px;padding:18px;
+    box-shadow:6px 6px 0 var(--c-pink);position:relative;
+  }
+  #pageC .c-hero .product-row .stamp{
+    position:absolute;top:-16px;right:-10px;width:88px;height:88px;
+    background:var(--c-red);color:#fff;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:900;transform:rotate(12deg);border:3px dashed #fff;
+    box-shadow:3px 3px 0 rgba(0,0,0,.25);
+  }
+  #pageC .c-hero .product-row .stamp .s1{font-size:11px;letter-spacing:.1em}
+  #pageC .c-hero .product-row .stamp .s2{font-size:22px;line-height:1}
+  #pageC .c-hero .product-row .stamp .s3{font-size:10px;margin-top:2px}
+  #pageC .c-hero .product-row img{width:100%;max-width:140px;margin:0 auto}
+  #pageC .c-hero .product-row .info .bullets{list-style:none;padding:0;margin:0;font-size:14px;font-weight:600;line-height:1.9}
+  #pageC .c-hero .product-row .info .bullets li:before{content:"✓ ";color:var(--c-red);font-weight:900}
+
+  /* price box */
+  #pageC .c-price{
+    background:#fff;margin:22px 18px 0;border-radius:14px;border:3px solid var(--c-red);
+    padding:22px 18px;text-align:center;position:relative;
+  }
+  #pageC .c-price .ribbon{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:var(--c-red);color:#fff;padding:5px 22px;font-weight:900;font-size:13px;
+    letter-spacing:.1em;border-radius:4px;white-space:nowrap;
+  }
+  #pageC .c-price .was{color:#999;font-size:17px;font-weight:700;text-decoration:line-through;margin-bottom:4px}
+  #pageC .c-price .now{
+    font-size:18px;font-weight:900;color:var(--c-ink);
+  }
+  #pageC .c-price .now .n{font-size:72px;color:var(--c-red);line-height:1;margin:0 4px;font-weight:900;letter-spacing:-.02em}
+  #pageC .c-price .save{
+    display:inline-block;background:var(--c-yellow);color:var(--c-red);
+    padding:4px 14px;border-radius:99px;font-size:14px;font-weight:900;margin-top:12px;
+    border:2px solid var(--c-red);
+  }
+
+  /* countdown */
+  #pageC .c-count{
+    margin:20px 18px 0;background:var(--c-ink);color:#fff;padding:16px;border-radius:12px;text-align:center;
+  }
+  #pageC .c-count .ttl{font-size:14px;font-weight:700;margin-bottom:10px;letter-spacing:.05em}
+  #pageC .c-count .ttl .dot{color:var(--c-red);animation:blinkC 1s steps(2) infinite;font-size:20px}
+  #pageC .c-count .row{display:flex;justify-content:center;gap:8px}
+  #pageC .c-count .cell{background:var(--c-red);padding:10px 12px;border-radius:6px;min-width:64px}
+  #pageC .c-count .cell .n{font-size:30px;font-weight:900;line-height:1;font-family:"Noto Sans TC",sans-serif}
+  #pageC .c-count .cell .u{font-size:11px;margin-top:3px;opacity:.9}
+
+  /* big CTA */
+  #pageC .c-bigcta{margin:18px 18px 0}
+  #pageC .c-bigcta button{
+    width:100%;background:linear-gradient(180deg,#ff5a2e,var(--c-red));
+    color:#fff;font-weight:900;font-size:22px;padding:18px;border-radius:14px;
+    box-shadow:0 8px 0 #8a0019;letter-spacing:.05em;
+    animation:wobbleC 1.6s ease-in-out infinite;
+  }
+  #pageC .c-bigcta button:active{transform:translateY(4px);box-shadow:0 4px 0 #8a0019}
+  #pageC .c-bigcta .note{text-align:center;font-size:12px;margin-top:10px;color:#666}
+  @keyframes wobbleC{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+
+  /* pain points */
+  #pageC .c-pain{background:#fff;margin-top:30px;padding:34px 0}
+  #pageC .c-pain h2{text-align:center;font-size:24px;font-weight:900;color:var(--c-pink-deep);margin-bottom:6px;line-height:1.3}
+  #pageC .c-pain h2 .q{color:var(--c-red);font-size:36px}
+  #pageC .c-pain .lede{text-align:center;color:#666;font-size:13px;margin-bottom:22px;padding:0 18px}
+  #pageC .c-pain ul{list-style:none;padding:0 18px;margin:0}
+  #pageC .c-pain li{
+    display:flex;gap:14px;align-items:center;background:var(--c-yellow-soft);
+    padding:14px 16px;border-radius:10px;margin-bottom:10px;border-left:5px solid var(--c-pink);
+    font-size:15px;font-weight:600;line-height:1.5;
+  }
+  #pageC .c-pain li .no{
+    flex:0 0 36px;width:36px;height:36px;background:var(--c-pink);color:#fff;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;
+  }
+
+  /* benefits */
+  #pageC .c-bene{padding:34px 0;background:var(--c-yellow-soft)}
+  #pageC .c-bene h2{text-align:center;font-size:24px;font-weight:900;color:var(--c-pink-deep);margin-bottom:20px}
+  #pageC .c-bene h2 span{background:var(--c-yellow);padding:2px 10px;border:2px solid var(--c-red)}
+  #pageC .c-bene .list{padding:0 18px;display:grid;gap:14px}
+  #pageC .c-bene .item{
+    background:#fff;border-radius:12px;padding:18px;border:2px solid var(--c-pink);
+    box-shadow:4px 4px 0 rgba(255,46,126,.2);
+    display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;
+  }
+  #pageC .c-bene .item .i{
+    width:56px;height:56px;background:var(--c-pink);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;font-weight:900;
+  }
+  #pageC .c-bene .item h3{font-size:17px;font-weight:900;color:var(--c-pink-deep);margin-bottom:4px}
+  #pageC .c-bene .item p{font-size:13px;color:#444;line-height:1.7}
+
+  /* testimonials */
+  #pageC .c-test{padding:34px 0;background:#fff}
+  #pageC .c-test h2{text-align:center;font-size:22px;font-weight:900;color:var(--c-pink-deep);margin-bottom:4px}
+  #pageC .c-test .star{text-align:center;font-size:22px;color:#f5b800;margin-bottom:18px;letter-spacing:2px}
+  #pageC .c-test .star .cnt{color:#666;font-size:13px;margin-left:6px}
+  #pageC .c-test .tlist{padding:0 18px;display:grid;gap:14px}
+  #pageC .c-test .tt{
+    background:var(--c-yellow-soft);border-radius:12px;padding:16px;position:relative;
+    border:2px dashed var(--c-pink);
+  }
+  #pageC .c-test .tt:before{
+    content:"❝";position:absolute;top:-14px;left:14px;background:var(--c-pink);color:#fff;
+    width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  #pageC .c-test .tt h4{font-size:15px;font-weight:900;color:var(--c-red);margin:0 0 6px}
+  #pageC .c-test .tt p{font-size:13px;line-height:1.8;color:#333;margin-bottom:10px}
+  #pageC .c-test .tt .user{display:flex;align-items:center;gap:10px;font-size:12px;color:#666;border-top:1px dashed #ccc;padding-top:8px}
+  #pageC .c-test .tt .user .av{
+    width:34px;height:34px;border-radius:50%;background:var(--c-pink);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;
+  }
+  #pageC .c-test .tt .star-s{color:#f5b800;margin-left:auto}
+
+  /* before-after */
+  #pageC .c-ba{padding:34px 0;background:var(--c-yellow)}
+  #pageC .c-ba h2{text-align:center;font-size:22px;font-weight:900;color:var(--c-pink-deep);margin-bottom:18px}
+  #pageC .c-ba .row{display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:center;padding:0 18px}
+  #pageC .c-ba .box{background:#fff;border:3px solid var(--c-ink);border-radius:12px;padding:14px;text-align:center;position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  #pageC .c-ba .box .lbl{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:3px 10px;font-weight:900;font-size:12px;border-radius:4px;white-space:nowrap}
+  #pageC .c-ba .box.b .lbl{background:#888;color:#fff}
+  #pageC .c-ba .box.a .lbl{background:var(--c-red);color:#fff}
+  #pageC .c-ba .box .face{font-size:44px;margin-bottom:6px}
+  #pageC .c-ba .box .desc{font-size:12px;font-weight:700;color:#555;line-height:1.5}
+  #pageC .c-ba .box.a .desc{color:var(--c-red)}
+  #pageC .c-ba .arrow{font-size:32px;color:var(--c-red);text-align:center;font-weight:900}
+
+  /* steps */
+  #pageC .c-steps{padding:34px 0;background:#fff}
+  #pageC .c-steps h2{text-align:center;font-size:22px;font-weight:900;color:var(--c-pink-deep);margin-bottom:4px}
+  #pageC .c-steps .lede{text-align:center;color:#666;font-size:13px;margin-bottom:20px}
+  #pageC .c-steps .row{display:grid;gap:14px;padding:0 18px}
+  #pageC .c-steps .step{
+    display:grid;grid-template-columns:54px 1fr;gap:14px;background:var(--c-yellow-soft);
+    padding:14px;border-radius:10px;align-items:center;
+  }
+  #pageC .c-steps .step .n{
+    width:54px;height:54px;background:var(--c-red);color:var(--c-yellow);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;
+    border:3px solid var(--c-ink);
+  }
+  #pageC .c-steps .step h4{font-size:15px;font-weight:900;margin-bottom:2px}
+  #pageC .c-steps .step p{font-size:12px;color:#555;line-height:1.7}
+
+  /* trust row */
+  #pageC .c-trust{padding:30px 18px;background:var(--c-pink);color:#fff}
+  #pageC .c-trust .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  #pageC .c-trust .box{background:rgba(255,255,255,.15);border:2px dashed rgba(255,255,255,.4);border-radius:10px;padding:14px;text-align:center}
+  #pageC .c-trust .box .ico{font-size:26px;margin-bottom:4px}
+  #pageC .c-trust .box .t{font-size:13px;font-weight:900;line-height:1.4}
+
+  /* faq */
+  #pageC .c-faq{padding:34px 0;background:#fff}
+  #pageC .c-faq h2{text-align:center;font-size:22px;font-weight:900;color:var(--c-pink-deep);margin-bottom:18px}
+  #pageC .c-faq .q{background:var(--c-yellow-soft);border-radius:10px;margin:0 18px 10px;padding:14px 16px;border-left:5px solid var(--c-pink)}
+  #pageC .c-faq .q .t{font-weight:900;font-size:14px;color:var(--c-red);margin-bottom:6px}
+  #pageC .c-faq .q .t:before{content:"Q. ";color:var(--c-pink-deep)}
+  #pageC .c-faq .q .a{font-size:13px;color:#444;line-height:1.8}
+  #pageC .c-faq .q .a:before{content:"A. ";color:var(--c-red);font-weight:900}
+
+  /* final */
+  #pageC .c-final{padding:40px 0 50px;background:linear-gradient(180deg,var(--c-yellow) 0%,var(--c-pink) 100%);text-align:center}
+  #pageC .c-final h2{font-size:26px;font-weight:900;color:var(--c-ink);margin:0 18px 10px;line-height:1.3}
+  #pageC .c-final h2 span{background:#fff;padding:2px 10px;border:3px solid var(--c-red);display:inline-block}
+  #pageC .c-final p{font-size:14px;font-weight:700;color:var(--c-ink);margin:0 18px 18px}
+  #pageC .c-final .bgt{
+    background:var(--c-red);color:#fff;padding:18px 32px;border-radius:99px;font-weight:900;font-size:20px;
+    box-shadow:0 6px 0 #8a0019;display:inline-block;letter-spacing:.05em;
+    animation:wobbleC 1.6s ease-in-out infinite;
+  }
+  #pageC .c-final .note{margin-top:14px;font-size:12px;color:#fff;font-weight:700}
+
+  /* footer */
+  #pageC .c-foot{background:var(--c-ink);color:#fff;padding:22px 18px;text-align:center;font-size:11px;line-height:1.8}
+  #pageC .c-foot .ph{font-size:20px;font-weight:900;color:var(--c-yellow);margin-bottom:6px}
+
+  @media (min-width:768px){
+    #pageC .c-hero h1{font-size:48px}
+    #pageC .c-price .now .n{font-size:96px}
+    #pageC .c-trust .grid{grid-template-columns:repeat(4,1fr)}
+    #pageC .c-bene .item{padding:22px}
+  }
+</style>
+
+<div id="pageC" class="page" data-screen-label="03 媽咪版">
+
+  <div class="c-top">
+    <div class="t1"><span class="blink">●</span> 首購限定 · 全台免運 · 貨到付款 <span class="blink">●</span></div>
+    <div class="t2">媽咪們最近都在搶！今天下單 明天到家 📦</div>
+  </div>
+
+  <section class="c-hero">
+    <div class="badges">
+      <span class="bdg">日本原裝</span>
+      <span class="bdg">買一送一</span>
+      <span class="bdg">贈拉提棒</span>
+    </div>
+    <h1>50+ 媽咪<br>都在用的<br><span class="hl">黃金一滴</span><br><span class="u">讓臉看起來年輕 10 歲</span></h1>
+    <p class="sub">斑點、暗沉、細紋通通一瓶搞定！<br><span class="mark">晚上擦、早上光</span>，連兒女都問妳做了什麼？</p>
+
+    <div class="product-row">
+      <div class="stamp">
+        <div class="s1">限時</div>
+        <div class="s2">5折</div>
+        <div class="s3">ONLY</div>
+      </div>
+      <div><img src="VT.png" alt="產品"></div>
+      <div class="info">
+        <ul class="bullets">
+          <li>10 日有感</li>
+          <li>全臉可用</li>
+          <li>敏感肌 OK</li>
+          <li>日本原裝</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="c-price">
+    <div class="ribbon">★ 今日下單 再送好禮 ★</div>
+    <div class="was">原價 $890</div>
+    <div class="now">NT$<span class="n">445</span>/瓶</div>
+    <div class="save">★ 立省 $445 一瓶抵兩瓶 ★</div>
+  </div>
+
+  <div class="c-count">
+    <div class="ttl"><span class="dot">●</span> 優惠倒數 再不搶就沒了！ <span class="dot">●</span></div>
+    <div class="row">
+      <div class="cell"><div class="n" id="cd-d">02</div><div class="u">天</div></div>
+      <div class="cell"><div class="n" id="cd-h">14</div><div class="u">時</div></div>
+      <div class="cell"><div class="n" id="cd-m">32</div><div class="u">分</div></div>
+      <div class="cell"><div class="n" id="cd-s">08</div><div class="u">秒</div></div>
+    </div>
+  </div>
+
+  <div class="c-bigcta">
+    <button onclick="openModal()">🔥 立即搶購 $445 🔥</button>
+    <div class="note">★ 貨到付款・7 天不滿意全額退費 ★</div>
+  </div>
+
+  <section class="c-pain">
+    <h2>妳是不是也有這些<span class="q">煩惱？</span></h2>
+    <div class="lede">40 歲後保養品越擦越多，但效果越來越差...</div>
+    <ul>
+      <li><span class="no">1</span>早上鏡子一照，<strong>斑點、暗沉</strong>跑出來</li>
+      <li><span class="no">2</span>笑起來<strong>細紋</strong>明顯，看起來好疲倦</li>
+      <li><span class="no">3</span>化妝浮粉、卡紋，<strong>底妝不服貼</strong></li>
+      <li><span class="no">4</span>敷面膜隔天就打回原形，<strong>效果不持久</strong></li>
+      <li><span class="no">5</span>朋友都說「妳最近怎麼看起來好累」</li>
+    </ul>
+  </section>
+
+  <section class="c-bene">
+    <h2><span>一瓶搞定 5 大困擾</span></h2>
+    <div class="list">
+      <div class="item"><div class="i">✦</div><div><h3>淡化斑點暗沉</h3><p>日本獨家透光因子，早晚一滴，暗沉明顯變亮。</p></div></div>
+      <div class="item"><div class="i">✧</div><div><h3>撫平細紋</h3><p>三重玻尿酸深層補水，笑紋眼紋看不見。</p></div></div>
+      <div class="item"><div class="i">★</div><div><h3>底妝服貼</h3><p>上妝前一滴，整天不浮粉、不卡紋、不脫妝。</p></div></div>
+      <div class="item"><div class="i">♥</div><div><h3>敏感肌 OK</h3><p>無酒精、無香料、無色素，孕婦哺乳期也能用。</p></div></div>
+      <div class="item"><div class="i">◆</div><div><h3>持久有感</h3><p>修護屏障、鎖水保濕，10 天就能看見差別。</p></div></div>
+    </div>
+  </section>
+
+  <section class="c-test">
+    <h2>真實媽咪好評</h2>
+    <div class="star">★★★★★ <span class="cnt">(8,472 則評價)</span></div>
+    <div class="tlist">
+      <div class="tt">
+        <h4>擦完連女兒都說我變年輕了！</h4>
+        <p>用了兩週，同事問我是不是去做醫美，太開心了～現在都推薦給姐妹們，已經回購第三瓶！</p>
+        <div class="user"><div class="av">王</div><div>王太太 52 歲・台北<span class="star-s">★★★★★</span></div></div>
+      </div>
+      <div class="tt">
+        <h4>斑點淡化超有感，底妝服貼</h4>
+        <p>擦了 10 天，臉頰的斑淡了好多，化妝也變服貼。姐妹都問我用什麼，超推薦！</p>
+        <div class="user"><div class="av">陳</div><div>陳媽媽 48 歲・台中<span class="star-s">★★★★★</span></div></div>
+      </div>
+      <div class="tt">
+        <h4>CP 值爆高 一瓶抵好幾瓶</h4>
+        <p>之前用專櫃一瓶三千多都沒這效果，這個才四百多根本超划算，已經買給媽媽婆婆用。</p>
+        <div class="user"><div class="av">林</div><div>林小姐 45 歲・高雄<span class="star-s">★★★★★</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ba">
+    <h2>10 天見證 · 差很大！</h2>
+    <div class="row">
+      <div class="box b"><div class="lbl">使用前</div><div class="face">😔</div><div class="desc">暗沉<br>細紋<br>無精神</div></div>
+      <div class="arrow">→</div>
+      <div class="box a"><div class="lbl">10 天後</div><div class="face">✨</div><div class="desc">透亮<br>緊緻<br>有光澤</div></div>
+    </div>
+  </section>
+
+  <section class="c-steps">
+    <h2>使用超簡單・3 步驟</h2>
+    <div class="lede">早晚一滴，10 天就有感</div>
+    <div class="row">
+      <div class="step"><div class="n">1</div><div><h4>洗臉後輕拍化妝水</h4><p>讓肌膚濕潤，幫助後續精華吸收。</p></div></div>
+      <div class="step"><div class="n">2</div><div><h4>取 2-3 滴於掌心</h4><p>輕輕按壓全臉，加強斑點細紋處。</p></div></div>
+      <div class="step"><div class="n">3</div><div><h4>後續保養</h4><p>接著擦上乳液或晚霜，鎖住精華。</p></div></div>
+    </div>
+  </section>
+
+  <section class="c-trust">
+    <div class="grid">
+      <div class="box"><div class="ico">🇯🇵</div><div class="t">日本原裝<br>進口</div></div>
+      <div class="box"><div class="ico">🚚</div><div class="t">全台免運<br>24 小時出貨</div></div>
+      <div class="box"><div class="ico">💳</div><div class="t">貨到付款<br>收到再付</div></div>
+      <div class="box"><div class="ico">✅</div><div class="t">7 天鑑賞<br>不滿意退費</div></div>
+    </div>
+  </section>
+
+  <section class="c-faq">
+    <h2>媽咪常問</h2>
+    <div class="q"><div class="t">我皮膚很敏感 可以用嗎？</div><div class="a">可以的～本品無酒精、無香料、無色素，溫和不刺激，敏感肌、孕哺期都安心使用。</div></div>
+    <div class="q"><div class="t">一瓶可以用多久？</div><div class="a">一日一滴，一瓶約可使用 10-14 天，建議早晚各一次效果更佳。</div></div>
+    <div class="q"><div class="t">貨到付款怎麼運作？</div><div class="a">填寫地址電話後，商品送到再付款給宅配司機，不用先付款、免刷卡超安心。</div></div>
+    <div class="q"><div class="t">不滿意可以退嗎？</div><div class="a">7 天不滿意無條件退費，請聯絡 LINE 客服即可處理。</div></div>
+  </section>
+
+  <section class="c-final">
+    <h2>今天下單<br><span>明天就看見年輕的自己</span></h2>
+    <p>★ 限量 100 組 · 額滿即止 ★</p>
+    <button class="bgt" onclick="openModal()">現在搶購 NT$445 →</button>
+    <div class="note">🚚 全台免運 · 💳 貨到付款 · ✅ 7 天退費</div>
+  </section>
+
+  <div class="c-foot">
+    <div class="ph">☎ 0800-888-XXX</div>
+    <div>客服時間 週一至週五 09:00-18:00</div>
+    <div>LINE 諮詢 @mitsuhi</div>
+    <div style="opacity:.5;margin-top:10px">© MITSUHI 三得利</div>
+  </div>
+</div>
+
+<!-- ==================== VERSION D — 寶藍橘 購物頻道版 ==================== -->
+<style>
+  #pageD{
+    --d-blue:#0a2d6c;
+    --d-blue-deep:#061a47;
+    --d-orange:#ff6a00;
+    --d-orange-deep:#d94f00;
+    --d-yellow:#ffd500;
+    --d-red:#d42020;
+    --d-cream:#fff8ea;
+    --d-ink:#0c1428;
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--d-cream);color:var(--d-ink);
+  }
+  #pageD *{font-family:inherit}
+  #pageD strong{color:var(--d-red)}
+
+  /* live banner */
+  #pageD .d-live{
+    background:var(--d-red);color:#fff;text-align:center;padding:54px 16px 12px;
+    font-weight:900;font-size:14px;letter-spacing:.05em;
+  }
+  #pageD .d-live .live-dot{
+    display:inline-block;width:8px;height:8px;background:#fff;border-radius:50%;
+    margin-right:6px;animation:blinkD 1s steps(2) infinite;vertical-align:middle;
+  }
+  @keyframes blinkD{50%{opacity:.2}}
+  #pageD .d-live .on{background:#fff;color:var(--d-red);padding:2px 8px;border-radius:3px;font-weight:900;margin:0 4px}
+
+  /* channel bar */
+  #pageD .d-chbar{
+    background:var(--d-blue);color:#fff;padding:10px 16px;display:flex;
+    justify-content:space-between;align-items:center;font-size:12px;font-weight:700;
+  }
+  #pageD .d-chbar .ch{background:var(--d-orange);padding:3px 10px;border-radius:3px;font-weight:900;letter-spacing:.1em}
+  #pageD .d-chbar .tm{opacity:.85}
+
+  /* hero — product showcase */
+  #pageD .d-hero{
+    background:linear-gradient(180deg,var(--d-blue) 0%,var(--d-blue-deep) 100%);
+    color:#fff;padding:24px 0 30px;position:relative;overflow:hidden;
+  }
+  #pageD .d-hero:before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 70% 50% at 50% 20%,rgba(255,106,0,.35) 0%,transparent 60%);
+    pointer-events:none;
+  }
+  #pageD .d-hero .inner{position:relative;padding:0 18px}
+  #pageD .d-hero .kicker{
+    text-align:center;font-size:12px;letter-spacing:.25em;color:var(--d-yellow);
+    font-weight:700;margin-bottom:10px;
+  }
+  #pageD .d-hero .kicker .st{color:var(--d-orange)}
+  #pageD .d-hero h1{
+    text-align:center;font-size:30px;font-weight:900;line-height:1.3;
+    text-shadow:2px 2px 0 rgba(0,0,0,.3);margin-bottom:12px;
+  }
+  #pageD .d-hero h1 .o{color:var(--d-orange)}
+  #pageD .d-hero h1 .y{color:var(--d-yellow)}
+  #pageD .d-hero .strap{
+    text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:22px;line-height:1.7;
+  }
+  #pageD .d-hero .strap .u{text-decoration:underline;text-decoration-color:var(--d-yellow);text-underline-offset:4px}
+
+  /* big product card */
+  #pageD .d-showcase{
+    background:#fff;border-radius:14px;margin:0 -4px;padding:20px;position:relative;
+    box-shadow:0 10px 40px rgba(0,0,0,.3);color:var(--d-ink);
+  }
+  #pageD .d-showcase:before{
+    content:"LIVE NOW";position:absolute;top:-12px;left:16px;background:var(--d-red);
+    color:#fff;padding:4px 12px;font-size:11px;font-weight:900;letter-spacing:.2em;border-radius:3px;
+  }
+  #pageD .d-showcase:after{
+    content:"現場直播";position:absolute;top:-10px;right:16px;background:var(--d-orange);
+    color:#fff;padding:3px 10px;font-size:11px;font-weight:900;letter-spacing:.15em;border-radius:3px;
+  }
+  #pageD .d-showcase .stage{
+    background:radial-gradient(ellipse at center,#fff4d6 0%,#fff 70%);
+    border-radius:10px;padding:20px;text-align:center;position:relative;margin-bottom:14px;
+  }
+  #pageD .d-showcase .stage img{max-width:160px;margin:0 auto}
+  #pageD .d-showcase .stage .arr-l,#pageD .d-showcase .stage .arr-r{
+    position:absolute;top:50%;transform:translateY(-50%);background:var(--d-blue);color:#fff;
+    width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;
+  }
+  #pageD .d-showcase .stage .arr-l{left:8px}
+  #pageD .d-showcase .stage .arr-r{right:8px}
+  #pageD .d-showcase .stage .dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+  #pageD .d-showcase .stage .dots .d{width:6px;height:6px;border-radius:50%;background:#ccc}
+  #pageD .d-showcase .stage .dots .d.on{background:var(--d-orange);width:20px;border-radius:3px}
+
+  #pageD .d-showcase h2{font-size:18px;font-weight:900;color:var(--d-blue);text-align:center;margin-bottom:4px}
+  #pageD .d-showcase .caption{text-align:center;font-size:12px;color:#666;margin-bottom:14px}
+
+  #pageD .d-showcase .price-block{
+    background:var(--d-yellow);border-radius:10px;padding:16px;text-align:center;
+    border:3px dashed var(--d-red);position:relative;
+  }
+  #pageD .d-showcase .price-block:before{
+    content:"★ 主持人推薦價 ★";position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+    background:var(--d-red);color:#fff;padding:3px 14px;font-size:11px;font-weight:900;letter-spacing:.1em;border-radius:3px;white-space:nowrap;
+  }
+  #pageD .d-showcase .was{color:#666;font-size:15px;text-decoration:line-through;font-weight:700;margin-top:6px}
+  #pageD .d-showcase .now{display:flex;align-items:baseline;justify-content:center;gap:4px;margin-top:4px;color:var(--d-red);font-weight:900}
+  #pageD .d-showcase .now .cur{font-size:20px}
+  #pageD .d-showcase .now .num{font-size:72px;line-height:1;letter-spacing:-.02em}
+  #pageD .d-showcase .now .suf{font-size:16px;color:var(--d-ink)}
+  #pageD .d-showcase .tagrow{display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+  #pageD .d-showcase .tagrow .tg{background:var(--d-red);color:#fff;padding:3px 10px;font-size:11px;font-weight:900;border-radius:3px}
+  #pageD .d-showcase .tagrow .tg.o{background:var(--d-orange)}
+  #pageD .d-showcase .tagrow .tg.b{background:var(--d-blue)}
+
+  /* live stats */
+  #pageD .d-stats{
+    background:var(--d-blue-deep);color:#fff;padding:16px 18px;display:grid;
+    grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;
+  }
+  #pageD .d-stats .st .n{
+    font-size:22px;font-weight:900;color:var(--d-yellow);
+  }
+  #pageD .d-stats .st .n span{color:#fff;font-size:14px;margin-left:2px}
+  #pageD .d-stats .st .l{font-size:11px;opacity:.85;margin-top:2px;letter-spacing:.05em}
+
+  /* countdown */
+  #pageD .d-count{
+    background:var(--d-red);color:#fff;padding:18px;text-align:center;
+  }
+  #pageD .d-count .ttl{font-size:13px;font-weight:900;margin-bottom:10px;letter-spacing:.05em}
+  #pageD .d-count .row{display:flex;justify-content:center;gap:6px}
+  #pageD .d-count .cell{background:#fff;color:var(--d-red);padding:8px 10px;border-radius:5px;min-width:56px}
+  #pageD .d-count .cell .n{font-size:26px;font-weight:900;line-height:1}
+  #pageD .d-count .cell .u{font-size:10px;color:#666;margin-top:2px}
+
+  /* host recommendation */
+  #pageD .d-host{
+    background:#fff;margin-top:0;padding:24px 18px;
+    border-top:4px solid var(--d-orange);
+  }
+  #pageD .d-host h2{
+    text-align:center;font-size:20px;font-weight:900;color:var(--d-blue);margin-bottom:4px;
+  }
+  #pageD .d-host h2 .hl{background:var(--d-yellow);padding:2px 8px}
+  #pageD .d-host .lede{text-align:center;font-size:13px;color:#666;margin-bottom:18px}
+  #pageD .d-host .hlist{display:grid;gap:14px}
+  #pageD .d-host .hitem{
+    display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;
+    padding:14px;background:#f7f7f7;border-radius:8px;border-left:4px solid var(--d-orange);
+  }
+  #pageD .d-host .hitem .no{
+    width:48px;height:48px;background:var(--d-blue);color:var(--d-yellow);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;
+  }
+  #pageD .d-host .hitem h3{font-size:15px;font-weight:900;color:var(--d-blue);margin-bottom:4px}
+  #pageD .d-host .hitem p{font-size:12px;color:#444;line-height:1.8}
+
+  /* specs table */
+  #pageD .d-specs{background:var(--d-blue);color:#fff;padding:24px 18px}
+  #pageD .d-specs h2{text-align:center;font-size:20px;font-weight:900;color:var(--d-yellow);margin-bottom:14px}
+  #pageD .d-specs table{width:100%;border-collapse:collapse;font-size:13px}
+  #pageD .d-specs td{padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.15);vertical-align:top;line-height:1.6}
+  #pageD .d-specs td:first-child{font-weight:900;color:var(--d-orange);width:34%;letter-spacing:.05em}
+
+  /* phone order */
+  #pageD .d-phone{
+    background:linear-gradient(90deg,var(--d-orange) 0%,var(--d-red) 100%);
+    color:#fff;padding:24px 18px;text-align:center;
+  }
+  #pageD .d-phone .k{font-size:12px;letter-spacing:.2em;font-weight:700;margin-bottom:6px}
+  #pageD .d-phone .num{font-size:44px;font-weight:900;letter-spacing:.02em;line-height:1.1;text-shadow:2px 2px 0 rgba(0,0,0,.2)}
+  #pageD .d-phone .num:before{content:"☎";margin-right:10px;font-size:34px}
+  #pageD .d-phone .hr{font-size:12px;margin-top:6px;font-weight:700;opacity:.95}
+  #pageD .d-phone .or{margin:14px 0 10px;font-size:13px;font-weight:700}
+  #pageD .d-phone .line-btn{
+    display:inline-block;background:#06c755;color:#fff;padding:12px 24px;border-radius:8px;
+    font-weight:900;font-size:15px;box-shadow:0 4px 0 #04a04a;
+  }
+
+  /* reviews ticker */
+  #pageD .d-revs{background:#fff;padding:24px 18px}
+  #pageD .d-revs h2{text-align:center;font-size:20px;font-weight:900;color:var(--d-blue);margin-bottom:4px}
+  #pageD .d-revs .sub{text-align:center;font-size:13px;color:var(--d-orange);font-weight:900;margin-bottom:16px}
+  #pageD .d-revs .rlist{display:grid;gap:12px}
+  #pageD .d-revs .rv{
+    background:#f7f9fc;border-left:4px solid var(--d-blue);border-radius:6px;padding:14px;
+  }
+  #pageD .d-revs .rv .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  #pageD .d-revs .rv .head .u{font-weight:900;font-size:13px;color:var(--d-blue)}
+  #pageD .d-revs .rv .head .st{color:#f5b800;font-size:13px;letter-spacing:1px}
+  #pageD .d-revs .rv p{font-size:13px;color:#333;line-height:1.7}
+  #pageD .d-revs .rv .v{color:#06c755;font-size:11px;font-weight:700;margin-top:6px}
+  #pageD .d-revs .rv .v:before{content:"✓ ";font-weight:900}
+
+  /* bundle offer */
+  #pageD .d-bundle{background:var(--d-yellow);padding:24px 18px}
+  #pageD .d-bundle h2{text-align:center;font-size:22px;font-weight:900;color:var(--d-red);margin-bottom:14px}
+  #pageD .d-bundle h2 span{background:var(--d-blue);color:var(--d-yellow);padding:2px 10px}
+  #pageD .d-bundle .plans{display:grid;gap:12px}
+  #pageD .d-bundle .pl{
+    background:#fff;border:3px solid var(--d-blue);border-radius:10px;padding:14px;
+    display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;position:relative;
+  }
+  #pageD .d-bundle .pl.best{border-color:var(--d-red);background:#fff5f5}
+  #pageD .d-bundle .pl.best:before{
+    content:"★ 最划算 ★";position:absolute;top:-12px;left:14px;background:var(--d-red);color:#fff;
+    padding:3px 10px;font-size:11px;font-weight:900;letter-spacing:.1em;border-radius:3px;
+  }
+  #pageD .d-bundle .pl .nm{font-size:14px;font-weight:900;color:var(--d-blue);margin-bottom:2px}
+  #pageD .d-bundle .pl .dsc{font-size:12px;color:#666;line-height:1.6}
+  #pageD .d-bundle .pl .pr{font-size:22px;font-weight:900;color:var(--d-red);line-height:1;text-align:right;white-space:nowrap}
+  #pageD .d-bundle .pl .pr .c{font-size:11px;color:#888;text-decoration:line-through;font-weight:700;display:block;margin-bottom:2px}
+
+  /* sticky foot bar + final */
+  #pageD .d-final{
+    background:var(--d-blue-deep);color:#fff;padding:30px 18px 40px;text-align:center;
+  }
+  #pageD .d-final h2{font-size:24px;font-weight:900;margin-bottom:8px;line-height:1.3}
+  #pageD .d-final h2 .o{color:var(--d-orange)}
+  #pageD .d-final h2 .y{color:var(--d-yellow)}
+  #pageD .d-final p{font-size:13px;opacity:.9;margin-bottom:20px}
+  #pageD .d-final button{
+    background:linear-gradient(180deg,var(--d-orange) 0%,var(--d-red) 100%);color:#fff;
+    font-weight:900;font-size:20px;padding:18px 36px;border-radius:10px;
+    box-shadow:0 6px 0 #7a1010;letter-spacing:.05em;
+  }
+  #pageD .d-final button:active{transform:translateY(4px);box-shadow:0 2px 0 #7a1010}
+  #pageD .d-final .trust{display:flex;justify-content:center;gap:14px;margin-top:18px;flex-wrap:wrap;font-size:11px;font-weight:700}
+  #pageD .d-final .trust span:before{content:"✓ ";color:var(--d-yellow);font-weight:900}
+
+  /* footer */
+  #pageD .d-foot{background:#000;color:rgba(255,255,255,.7);padding:20px;text-align:center;font-size:11px;line-height:1.8}
+
+  @media (min-width:768px){
+    #pageD .d-hero h1{font-size:42px}
+    #pageD .d-showcase .now .num{font-size:96px}
+    #pageD .d-bundle .pl{grid-template-columns:1fr auto}
+  }
+</style>
+
+<div id="pageD" class="page" data-screen-label="04 購物台版">
+
+  <div class="d-live"><span class="live-dot"></span>LIVE 直播熱賣中 · 今日下殺 <span class="on">5折</span> · 最後 <span class="on">47</span> 組</div>
+
+  <div class="d-chbar">
+    <span class="ch">CH 88</span>
+    <span>2026/04/20 · 21:00-22:00 熱播中</span>
+    <span class="tm">剩餘 18:42</span>
+  </div>
+
+  <section class="d-hero">
+    <div class="inner">
+      <div class="kicker"><span class="st">★ ★ ★</span> 本 檔 主 打 <span class="st">★ ★ ★</span></div>
+      <h1>日本<span class="y">蜜得絲</span>精粹<br><span class="o">透光一滴</span> 逆轉 10 歲！</h1>
+      <p class="strap">主持人親試 14 天<br><span class="u">斑點淡了、細紋平了、肌膚亮了！</span></p>
+
+      <div class="d-showcase">
+        <div class="stage">
+          <div class="arr-l">‹</div>
+          <img src="VT.png" alt="產品">
+          <div class="arr-r">›</div>
+          <div class="dots"><div class="d on"></div><div class="d"></div><div class="d"></div></div>
+        </div>
+        <h2>vitoas 蜜得絲 10 日瓶</h2>
+        <div class="caption">Made in Japan · 10ml</div>
+
+        <div class="price-block">
+          <div class="was">市售價 NT$890</div>
+          <div class="now"><span class="cur">NT$</span><span class="num">445</span><span class="suf">起</span></div>
+          <div class="tagrow">
+            <span class="tg">本檔 5 折</span>
+            <span class="tg o">買二送一</span>
+            <span class="tg b">免運費</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="d-stats">
+    <div class="st"><div class="n">8,472<span>人</span></div><div class="l">已搶購</div></div>
+    <div class="st"><div class="n">4.9<span>/5</span></div><div class="l">平均評分</div></div>
+    <div class="st"><div class="n">47<span>組</span></div><div class="l">本檔剩餘</div></div>
+  </div>
+
+  <div class="d-count">
+    <div class="ttl">◉ 本檔結束倒數 ◉</div>
+    <div class="row">
+      <div class="cell"><div class="n">02</div><div class="u">天</div></div>
+      <div class="cell"><div class="n">14</div><div class="u">時</div></div>
+      <div class="cell"><div class="n">32</div><div class="u">分</div></div>
+      <div class="cell"><div class="n">08</div><div class="u">秒</div></div>
+    </div>
+  </div>
+
+  <section class="d-host">
+    <h2>主 持 人 <span class="hl">強 力 推 薦</span></h2>
+    <p class="lede">這一檔如果沒搶到，真的要等下個月了！</p>
+    <div class="hlist">
+      <div class="hitem"><div class="no">1</div><div><h3>日本原裝進口 品質保證</h3><p>日本百年老廠生產，通過國際品質認證，成分安全有保障，連敏感肌都可以安心使用。</p></div></div>
+      <div class="hitem"><div class="no">2</div><div><h3>3 大透光因子 一次到位</h3><p>獨家添加玻尿酸、菸鹼醯胺、維他命 C 衍生物，一瓶抵三瓶，省錢又有效。</p></div></div>
+      <div class="hitem"><div class="no">3</div><div><h3>10 天超有感 變年輕</h3><p>早晚一滴，10 天明顯感受到肌膚變亮、變緊、變光滑，朋友都會發現妳的改變。</p></div></div>
+      <div class="hitem"><div class="no">4</div><div><h3>電視購物 獨家優惠</h3><p>原價 NT$890，本檔下殺 5 折 NT$445，再加贈拉提棒一支，現場搶購才有！</p></div></div>
+    </div>
+  </section>
+
+  <section class="d-specs">
+    <h2>◆ 商 品 規 格 ◆</h2>
+    <table>
+      <tr><td>品名</td><td>蜜得絲 vitoas  透光精粹 10 日瓶</td></tr>
+      <tr><td>容量</td><td>10ml / 瓶</td></tr>
+      <tr><td>產地</td><td>日本原裝進口</td></tr>
+      <tr><td>主成分</td><td>透光因子 · 玻尿酸 · 菸鹼醯胺 · 維他命 C 衍生物</td></tr>
+      <tr><td>適用</td><td>全膚質（含敏感肌、孕哺期）</td></tr>
+      <tr><td>保存</td><td>陰涼乾燥處 · 開封後請於 3 個月內使用完畢</td></tr>
+      <tr><td>特色</td><td>無酒精 · 無香料 · 無色素 · 無防腐劑</td></tr>
+    </table>
+  </section>
+
+  <section class="d-phone">
+    <div class="k">◆ 現 場 搶 購 專 線 ◆</div>
+    <div class="num">0800-888-445</div>
+    <div class="hr">（24 小時訂購 · 全年無休）</div>
+    <div class="or">── 或線上下單 ──</div>
+    <a class="line-btn" onclick="openModal()">點我立即下單 →</a>
+  </section>
+
+  <section class="d-revs">
+    <h2>觀眾來電好評</h2>
+    <div class="sub">★★★★★ 4.9 分 · 8,472 則實際購買評價</div>
+    <div class="rlist">
+      <div class="rv"><div class="head"><span class="u">黃女士 · 55 歲</span><span class="st">★★★★★</span></div><p>電視上看到主持人介紹就打電話訂了，用了兩週真的有感，斑點淡化很多！</p><div class="v">已購買驗證</div></div>
+      <div class="rv"><div class="head"><span class="u">張媽媽 · 49 歲</span><span class="st">★★★★★</span></div><p>之前買過好幾牌都沒有感覺，這個真的不一樣，14 天臉變透亮很明顯。</p><div class="v">已購買驗證</div></div>
+      <div class="rv"><div class="head"><span class="u">李太太 · 52 歲</span><span class="st">★★★★★</span></div><p>貨到付款很方便，不用擔心先付錢，收到用了再付，這家公司很有信用。</p><div class="v">已購買驗證</div></div>
+      <div class="rv"><div class="head"><span class="u">吳阿姨 · 58 歲</span><span class="st">★★★★★</span></div><p>已經買給自己和妹妹用了，這次再買兩組給女兒和媳婦當母親節禮物。</p><div class="v">已購買驗證</div></div>
+    </div>
+  </section>
+
+  <section class="d-bundle">
+    <h2><span>選擇您要的組合</span></h2>
+    <div class="plans">
+      <div class="pl">
+        <div><div class="nm">單瓶嚐鮮組</div><div class="dsc">10 日瓶 × 1・先試用再加購</div></div>
+        <div class="pr"><span class="c">NT$890</span>NT$445</div>
+      </div>
+      <div class="pl best">
+        <div><div class="nm">買二送一 黃金組</div><div class="dsc">10 日瓶 × 3・贈拉提棒一支</div></div>
+        <div class="pr"><span class="c">NT$2,670</span>NT$890</div>
+      </div>
+      <div class="pl">
+        <div><div class="nm">家庭超值組</div><div class="dsc">10 日瓶 × 6・贈拉提棒 + 化妝水</div></div>
+        <div class="pr"><span class="c">NT$5,340</span>NT$1,680</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-final">
+    <h2><span class="y">把握</span>本檔 <span class="o">最優惠</span><br>錯過等下個月！</h2>
+    <p>主持人推薦價 · 限量 47 組 · 賣完為止</p>
+    <button onclick="openModal()">🔥 立即下單 NT$445 🔥</button>
+    <div class="trust"><span>日本原裝</span><span>貨到付款</span><span>7 天退費</span><span>全台免運</span></div>
+  </section>
+
+  <div class="d-foot">
+    <div>客服專線 0800-888-445 · LINE @mitsuhi</div>
+    <div style="margin-top:6px;opacity:.5">© MITSUHI 蜜得絲 · 本頁為示意設計</div>
+  </div>
+</div>
+
 
 <!-- floating CTA (only for Page A) -->
 <div class="float-cta" id="floatCta">
