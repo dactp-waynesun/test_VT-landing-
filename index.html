@@ -1,0 +1,1718 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>三得利SUNTORY vitoas蜜得絲 — 10 日透光體驗版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1410;
+    --ink-2:#2a221b;
+    --ink-soft:#5a4a3c;
+    --cream:#faf6ee;
+    --cream-2:#f3ebdb;
+    --paper:#fdfaf3;
+    --orange:#e8833a;
+    --orange-deep:#c8611c;
+    --orange-hot:#e85a1a;
+    --gold:#c89456;
+    --gold-soft:#e6c79a;
+    --haze:#fbe8d2;
+    --haze-2:#fdf1e0;
+    --line:rgba(26,20,16,.15);
+    --line-soft:rgba(26,20,16,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--cream);color:var(--ink);font-family:"Noto Serif TC",serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";}
+  body{overflow-x:hidden;}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;border:0;background:0;cursor:pointer;color:inherit}
+
+  /* ============ VERSION SWITCHER (top) ============ */
+  .switcher{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    z-index:80;display:flex;gap:4px;
+    background:rgba(250,246,238,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border:1px solid var(--line);border-radius:999px;padding:5px;
+    box-shadow:0 8px 30px rgba(26,20,16,.08);
+  }
+  .switcher button{
+    padding:9px 18px;border-radius:999px;font-family:"Noto Sans TC",sans-serif;
+    font-size:12px;font-weight:500;letter-spacing:.12em;color:var(--ink-soft);
+    transition:all .3s ease;
+  }
+  .switcher button.on{background:var(--ink);color:var(--cream);}
+  .switcher .v{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;margin-right:4px;opacity:.6;}
+
+  .page{display:none}
+  .page.on{display:block}
+
+  /* ============ SCROLL ANIMATION ============ */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}.reveal.d5{transition-delay:.5s}
+
+  /* ============ SHARED COMPONENTS ============ */
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:14px;
+    padding:20px 36px;background:var(--ink);color:var(--cream);
+    font-family:"Noto Serif TC",serif;font-weight:500;font-size:16px;letter-spacing:.24em;
+    border-radius:999px;position:relative;overflow:hidden;
+    transition:transform .4s ease,box-shadow .4s ease;
+    box-shadow:0 10px 30px rgba(26,20,16,.18);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(26,20,16,.28)}
+  .btn-primary .arrow{width:28px;height:1px;background:var(--cream);position:relative;transition:all .4s}
+  .btn-primary .arrow:after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--cream);border-right:1px solid var(--cream);transform:rotate(45deg);transition:all .4s}
+  .btn-primary:hover .arrow{width:40px}
+
+  .vertical-label{writing-mode:vertical-rl;font-family:"Noto Serif TC",serif;letter-spacing:.4em;color:var(--ink-soft);font-size:12px;}
+
+  .hairline{height:1px;background:var(--line-soft);width:100%}
+
+  /* ==========================================================
+     BOTTLE PLACEHOLDER — based on reference photo
+     橘色透光玻璃瓶、銀色頸環、圓潤肩線、壓頭
+     ========================================================== */
+  .bottle-placeholder{
+    width:100%;aspect-ratio:1/2.6;position:relative;
+    filter:drop-shadow(0 24px 40px rgba(200,80,20,.3));
+  }
+  .bottle-placeholder .cap{
+    position:absolute;left:32%;right:32%;top:0;height:16%;
+    background:linear-gradient(180deg,#ffb573 0%,#ff9a4d 40%,#e8702a 100%);
+    border-radius:40% 40% 20% 20% / 50% 50% 30% 30%;
+    box-shadow:inset 0 6px 10px rgba(255,255,255,.55), inset 0 -6px 14px rgba(150,60,15,.35);
+  }
+  .bottle-placeholder .cap:before{ /* top highlight */
+    content:"";position:absolute;left:20%;right:20%;top:10%;height:25%;
+    background:radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.8), transparent 70%);
+    border-radius:50%;
+  }
+  .bottle-placeholder .nozzle{
+    position:absolute;left:42%;right:42%;top:10%;height:12%;
+    background:linear-gradient(180deg,#fff5e8,#e8702a);
+    border-radius:2px;
+  }
+  .bottle-placeholder .collar{
+    position:absolute;left:28%;right:28%;top:14%;height:6%;
+    background:linear-gradient(180deg,#c4c4c4 0%,#f8f8f8 30%,#9a9a9a 70%,#d0d0d0 100%);
+    border-radius:2px;
+    box-shadow:0 1px 2px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .bottle-placeholder .body{
+    position:absolute;left:8%;right:8%;top:19%;bottom:0;
+    background:
+      radial-gradient(ellipse 50% 30% at 50% 8%, rgba(255,240,220,.5) 0%, transparent 60%),
+      radial-gradient(ellipse 20% 60% at 18% 50%, rgba(255,255,255,.35) 0%, transparent 65%),
+      radial-gradient(ellipse 12% 50% at 88% 55%, rgba(150,50,10,.25) 0%, transparent 60%),
+      linear-gradient(180deg,#ff8236 0%, #e8702a 40%, #d85a1a 100%);
+    border-radius:42% 42% 14% 14% / 18% 18% 6% 6%;
+    box-shadow:inset 0 0 30px rgba(255,255,255,.15),inset -4px 0 20px rgba(120,40,10,.35);
+  }
+  .bottle-placeholder .label{
+    position:absolute;left:0;right:0;top:46%;text-align:center;
+    font-family:"Cormorant Garamond",serif;color:rgba(255,255,255,.92);
+    font-weight:300;letter-spacing:.02em;
+    pointer-events:none;
+  }
+  .bottle-placeholder .label .brand{font-size:180%;font-weight:400;letter-spacing:.06em;line-height:1}
+  .bottle-placeholder .label .dash{display:inline-block;width:40%;height:1px;background:rgba(255,255,255,.55);margin-top:4px}
+  .bottle-placeholder .label .sub{font-size:62%;opacity:.85;margin-top:4px;letter-spacing:.1em;font-style:italic}
+  .bottle-placeholder .label .line-italic{font-size:56%;opacity:.8;margin-top:14%;font-style:italic;letter-spacing:.04em}
+
+  /* sizes */
+  .bottle-placeholder.small{max-width:60px;margin:0 auto}
+  .bottle-placeholder.medium{max-width:120px;margin:0 auto}
+  .bottle-placeholder.large{max-width:280px;margin:0 auto}
+
+  /* ============================================================
+     PAGE A  —  保守版（明亮象牙白、優雅編排）
+     ============================================================ */
+  #pageA{background:var(--cream)}
+  #pageA .maxw{max-width:1100px;margin:0 auto;padding:0 40px}
+
+  .a-topbar{
+    padding:56px 40px 24px;display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid var(--line-soft);max-width:1100px;margin:0 auto;
+  }
+  .a-topbar .brand{font-family:"Noto Serif TC",serif;font-size:22px;letter-spacing:.3em;font-weight:500}
+  .a-topbar .brand em{font-style:normal;color:var(--orange-deep)}
+  .a-topbar .meta{display:flex;gap:28px;font-family:"Noto Sans TC",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink-soft);}
+  .a-topbar .meta span:before{content:"・";margin-right:8px;color:var(--gold)}
+
+  /* ---- A: Hero ---- */
+  .a-hero{
+    position:relative;padding:90px 0 120px;overflow:hidden;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 100%, var(--haze) 0%, transparent 70%),
+      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+  .a-hero .grid{display:grid;grid-template-columns:1fr 420px 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;padding:0 40px}
+  .a-hero .left{text-align:right}
+  .a-hero .jp-vertical{
+    writing-mode:vertical-rl;
+    font-family:"Noto Serif TC",serif;
+    font-size:14px;letter-spacing:.8em;color:var(--gold);
+    position:absolute;right:40px;top:90px;height:320px;
+    font-weight:500;
+  }
+  .a-hero .jp-vertical .dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--orange);margin:10px 0}
+
+  .a-hero .kicker{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:15px;letter-spacing:.3em;margin-bottom:14px;font-weight:500}
+  .a-hero .kicker:before{content:"—— "}.a-hero .kicker:after{content:" ——"}
+  .a-hero h1{
+    font-family:"Noto Serif TC",serif;
+    font-weight:600;font-size:54px;line-height:1.3;letter-spacing:.04em;
+    color:var(--ink);
+  }
+  .a-hero h1 .gold{color:var(--orange-deep);position:relative;font-weight:700}
+  .a-hero h1 .gold:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold)}
+  .a-hero .sub{margin-top:22px;font-size:16px;line-height:2;color:var(--ink-soft);letter-spacing:.08em;font-weight:400}
+  .a-hero .tag-row{margin-top:30px;display:flex;gap:8px;justify-content:flex-end}
+  .a-hero .tag{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.2em;padding:6px 14px;border:1px solid var(--gold);color:var(--orange-deep);border-radius:2px}
+
+  .a-hero .product{position:relative;padding:0 30px}
+  .a-hero .product .circle{
+    position:absolute;inset:-40px -10px -20px -10px;
+    background:radial-gradient(circle at 50% 50%, var(--haze) 0%, transparent 70%);
+    z-index:0;
+  }
+  .a-hero .product .bottle-placeholder{position:relative;z-index:2;max-width:280px;margin:0 auto}
+  .a-hero .stamp{
+    position:absolute;right:-10px;top:-10px;z-index:3;width:110px;height:110px;
+    border-radius:50%;background:var(--ink);color:var(--cream);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:"Noto Serif TC",serif;
+    transform:rotate(-8deg);
+    box-shadow:0 10px 24px rgba(26,20,16,.2);
+  }
+  .a-hero .stamp .n{font-size:36px;font-weight:700;line-height:1;color:var(--orange)}
+  .a-hero .stamp .t{font-size:11px;letter-spacing:.25em;margin-top:4px;color:var(--cream)}
+  .a-hero .stamp .t2{font-size:11px;letter-spacing:.15em;margin-top:3px}
+
+  .a-hero .right{padding-left:10px}
+  .a-hero .right .feat{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
+  .a-hero .right .feat .idx{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:26px;min-width:32px;line-height:1}
+  .a-hero .right .feat .t{font-size:15px;letter-spacing:.1em;line-height:1.7;font-weight:600}
+  .a-hero .right .feat .d{font-family:"Noto Sans TC",sans-serif;font-size:12px;color:var(--ink-soft);margin-top:4px;letter-spacing:.05em;font-weight:400}
+
+  .a-hero .scroll-hint{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.4em;color:var(--ink-soft);
+    display:flex;align-items:center;gap:12px;
+  }
+  .a-hero .scroll-hint:after{content:"";width:40px;height:1px;background:var(--ink-soft);animation:pull 2s ease-in-out infinite}
+  @keyframes pull{0%,100%{transform:scaleX(.4);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
+
+  /* ---- A: Section header pattern ---- */
+  .a-section-head{text-align:center;padding:0 0 50px;position:relative}
+  .a-section-head .num{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:14px;letter-spacing:.4em;margin-bottom:10px}
+  .a-section-head .num .hr{display:inline-block;width:30px;height:1px;background:var(--gold);vertical-align:middle;margin:0 10px;transform:translateY(-2px)}
+  .a-section-head h2{font-family:"Noto Serif TC",serif;font-size:38px;font-weight:600;letter-spacing:.1em;line-height:1.4}
+  .a-section-head .en{font-family:"Noto Serif TC",serif;font-size:15px;color:var(--ink-soft);margin-top:10px;letter-spacing:.3em;font-weight:400}
+
+  /* ---- A: Benefits grid ---- */
+  .a-benefits{padding:120px 0;background:var(--cream)}
+  .a-benefits .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .a-benefits .bcell{background:var(--cream);padding:48px 36px;position:relative;transition:background .4s}
+  .a-benefits .bcell:hover{background:var(--paper)}
+  .a-benefits .bcell .vnum{position:absolute;top:24px;right:24px;font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:32px;opacity:.5}
+  .a-benefits .bcell .icon{
+    width:64px;height:64px;border:1px solid var(--gold);border-radius:50%;margin-bottom:26px;
+    display:flex;align-items:center;justify-content:center;color:var(--orange-deep);
+    font-family:"Noto Serif TC",serif;font-size:22px;font-weight:600;
+  }
+  .a-benefits .bcell h3{font-family:"Noto Serif TC",serif;font-size:24px;letter-spacing:.1em;font-weight:700;margin-bottom:12px}
+  .a-benefits .bcell .en{font-family:"Noto Serif TC",serif;color:var(--gold);font-size:13px;letter-spacing:.3em;margin-bottom:16px}
+  .a-benefits .bcell p{font-size:14px;line-height:1.9;color:var(--ink-soft);letter-spacing:.05em}
+
+  /* ---- A: Story ---- */
+  .a-story{padding:120px 0;background:linear-gradient(180deg,var(--cream) 0%,var(--haze-2) 100%)}
+  .a-story .row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1000px;margin:0 auto;padding:0 40px}
+  .a-story .imgbox{aspect-ratio:4/5;background:
+    repeating-linear-gradient(135deg, #efd8b8 0 2px, transparent 2px 14px),
+    linear-gradient(160deg, #f3c68c, #d89255);
+    border-radius:2px;position:relative;overflow:hidden;
+    box-shadow:0 20px 60px rgba(200,100,28,.2);
+  }
+  .a-story .imgbox:before{
+    content:"情境示意圖 · 素材替換";
+    position:absolute;bottom:20px;left:20px;
+    font-family:"JetBrains Mono",monospace;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.1em;
+  }
+  .a-story .imgbox .seal{
+    position:absolute;top:20px;right:20px;
+    width:80px;height:80px;border:1px solid rgba(255,255,255,.6);border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;
+    font-family:"Noto Serif TC",serif;
+  }
+  .a-story .imgbox .seal .j{font-size:16px;letter-spacing:.2em;font-weight:500}
+  .a-story .imgbox .seal .e{font-size:10px;margin-top:4px;letter-spacing:.2em;opacity:.9}
+
+  .a-story h2{font-family:"Noto Serif TC",serif;font-size:36px;font-weight:600;line-height:1.5;letter-spacing:.08em;margin-bottom:20px}
+  .a-story h2 em{font-style:normal;color:var(--orange-deep);border-bottom:1px solid var(--gold);padding-bottom:4px;font-weight:700}
+  .a-story .jp-side{font-family:"Noto Serif TC",serif;color:var(--gold);font-size:13px;letter-spacing:.4em;margin-bottom:16px;font-weight:500}
+  .a-story .jp-side:before{content:"── "}
+  .a-story p{font-size:15px;line-height:2;color:var(--ink-soft);letter-spacing:.06em;margin-bottom:20px}
+  .a-story .ingr-list{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .a-story .ingr{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,.5);border-left:2px solid var(--orange);border-radius:0 4px 4px 0}
+  .a-story .ingr .pct{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:24px;color:var(--orange-deep);min-width:54px}
+  .a-story .ingr .lbl{font-size:12px;line-height:1.5;color:var(--ink)}
+
+  /* ---- A: Offer cards ---- */
+  .a-offers{padding:120px 0;background:var(--paper)}
+  .a-offers .cards{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:0 auto;padding:0 40px}
+  .a-card{
+    background:var(--cream);border:1px solid var(--line-soft);border-radius:4px;
+    padding:44px 40px 40px;position:relative;overflow:hidden;
+    transition:transform .5s cubic-bezier(.2,.6,.2,1),box-shadow .5s;
+  }
+  .a-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px rgba(200,100,28,.18)}
+  .a-card .ribbon{
+    position:absolute;top:20px;right:-28px;background:var(--ink);color:var(--cream);
+    font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.3em;font-weight:500;
+    padding:4px 34px;transform:rotate(38deg);
+  }
+  .a-card.deep .ribbon{background:var(--orange-deep)}
+  .a-card .t-en{font-family:"Noto Serif TC",serif;color:var(--gold);font-size:14px;letter-spacing:.35em;margin-bottom:8px;font-weight:500}
+  .a-card h3{font-family:"Noto Serif TC",serif;font-size:28px;letter-spacing:.12em;font-weight:700;margin-bottom:6px}
+  .a-card .vol{font-family:"Noto Sans TC",sans-serif;font-size:12px;color:var(--ink-soft);letter-spacing:.2em;margin-bottom:24px}
+  .a-card .bot{display:flex;gap:20px;align-items:center;padding:24px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);margin-bottom:24px}
+  .a-card .bot .pshape{width:80px;flex-shrink:0}
+  .a-card .bot .bullets{flex:1;display:flex;flex-direction:column;gap:10px}
+  .a-card .bot .bullets li{font-size:13px;line-height:1.6;color:var(--ink);display:flex;gap:8px;list-style:none}
+  .a-card .bot .bullets li:before{content:"";width:6px;height:6px;background:var(--orange);border-radius:50%;margin-top:7px;flex-shrink:0}
+  .a-card .price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .a-card .price-row .lbl{font-family:"Noto Serif TC",serif;font-size:13px;color:var(--ink-soft);letter-spacing:.25em}
+  .a-card .price-row .old{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--ink-soft);text-decoration:line-through}
+  .a-card .price-big{font-family:"Cormorant Garamond",serif;font-size:68px;line-height:1;color:var(--orange-deep);font-weight:500;letter-spacing:-.02em}
+  .a-card .price-big .cur{font-size:28px;vertical-align:top;margin-right:4px}
+  .a-card .price-note{font-family:"Noto Sans TC",sans-serif;font-size:11px;color:var(--ink-soft);margin-bottom:24px;letter-spacing:.1em}
+  .a-card .pills{display:flex;gap:8px;margin-bottom:24px}
+  .a-card .pill{font-family:"Noto Serif TC",serif;font-size:11px;letter-spacing:.25em;padding:5px 12px;background:var(--haze);color:var(--orange-deep);border-radius:2px;font-weight:500}
+  .a-card .cta{width:100%;display:flex;justify-content:center}
+
+  /* ---- A: Timer ---- */
+  .a-timer{margin:60px auto 0;max-width:720px;text-align:center;padding:0 40px}
+  .a-timer .lbl{font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.5em;color:var(--ink-soft);margin-bottom:16px;font-weight:500}
+  .a-timer .clock{display:flex;justify-content:center;gap:22px}
+  .a-timer .cell{text-align:center}
+  .a-timer .num{font-family:"Cormorant Garamond",serif;font-size:52px;color:var(--orange-deep);font-weight:400;line-height:1;font-variant-numeric:tabular-nums}
+  .a-timer .unit{font-family:"Noto Sans TC",sans-serif;font-size:11px;color:var(--ink-soft);letter-spacing:.3em;margin-top:6px}
+  .a-timer .colon{font-family:"Cormorant Garamond",serif;font-size:44px;color:var(--gold);line-height:1;align-self:flex-start;margin-top:4px}
+  .a-timer .stock{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:var(--haze);padding:8px 20px;border-radius:999px;font-size:13px;color:var(--orange-deep);letter-spacing:.1em}
+  .a-timer .stock .dot{width:6px;height:6px;background:var(--orange-hot);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+
+  /* ---- A: Trust / awards ---- */
+  .a-trust{padding:120px 0;background:var(--cream)}
+  .a-trust .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:40px auto 0;padding:0 40px}
+  .a-trust .badge{
+    aspect-ratio:1/1.05;border:1px solid var(--line-soft);border-radius:4px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:24px;background:var(--paper);text-align:center;position:relative;
+    transition:all .4s;
+  }
+  .a-trust .badge:hover{border-color:var(--gold);background:var(--cream)}
+  .a-trust .badge .num{font-family:"Cormorant Garamond",serif;font-size:58px;color:var(--orange-deep);line-height:1;font-weight:500}
+  .a-trust .badge .num .small{font-size:24px;vertical-align:top}
+  .a-trust .badge .lbl{font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.2em;margin-top:14px;line-height:1.5;font-weight:500}
+  .a-trust .badge .en{font-family:"Noto Sans TC",sans-serif;color:var(--gold);font-size:11px;letter-spacing:.25em;margin-top:6px}
+
+  /* ---- A: Steps ---- */
+  .a-steps{padding:120px 0;background:linear-gradient(180deg,var(--cream) 0%,var(--haze-2) 100%)}
+  .a-steps .row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto;padding:0 40px;position:relative}
+  .a-steps .row:before{content:"";position:absolute;left:20%;right:20%;top:60px;height:1px;background:var(--gold-soft);z-index:0}
+  .a-steps .step{text-align:center;position:relative;z-index:1;background:transparent;padding:0 10px}
+  .a-steps .step .n{
+    width:120px;height:120px;border:1px solid var(--gold);border-radius:50%;margin:0 auto 24px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--cream);
+    transition:all .4s;
+  }
+  .a-steps .step:hover .n{background:var(--ink);color:var(--cream)}
+  .a-steps .step:hover .n .small{color:var(--gold-soft)}
+  .a-steps .step .n .small{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:6px;font-weight:500}
+  .a-steps .step .n .big{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:500;line-height:1}
+  .a-steps .step h4{font-family:"Noto Serif TC",serif;font-size:19px;font-weight:700;letter-spacing:.12em;margin-bottom:10px}
+  .a-steps .step p{font-size:13px;line-height:1.8;color:var(--ink-soft)}
+
+  /* ---- A: Reviews ---- */
+  .a-reviews{padding:120px 0;background:var(--cream)}
+  .a-reviews .wrap{max-width:1000px;margin:0 auto;padding:0 40px}
+  .a-reviews .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px}
+  .a-reviews .rcard{padding:40px 36px;background:var(--paper);border:1px solid var(--line-soft);border-radius:4px;position:relative}
+  .a-reviews .rcard .quote-mark{position:absolute;top:-12px;left:30px;background:var(--cream);padding:0 10px;font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold);line-height:1}
+  .a-reviews .stars{color:var(--orange);letter-spacing:.2em;margin-bottom:12px}
+  .a-reviews .rt{font-family:"Noto Serif TC",serif;font-size:18px;line-height:1.8;font-weight:700;margin-bottom:14px;letter-spacing:.04em}
+  .a-reviews .rb{font-size:14px;line-height:2;color:var(--ink-soft)}
+  .a-reviews .ruser{margin-top:22px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+  .a-reviews .ruser .age{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold)}
+
+  .a-beforeafter{margin-top:70px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--gold-soft);border-radius:4px;overflow:hidden;position:relative}
+  .a-beforeafter .ba{aspect-ratio:4/3;position:relative;overflow:hidden}
+  .a-beforeafter .ba.b{background:linear-gradient(135deg,#e8dccc,#c9b998);}
+  .a-beforeafter .ba.a{background:linear-gradient(135deg,#fdd9a8,#e8833a);}
+  .a-beforeafter .ba .lbl{position:absolute;top:20px;left:20px;background:rgba(26,20,16,.85);color:var(--cream);font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.25em;padding:6px 16px;border-radius:2px;font-weight:500}
+  .a-beforeafter .ba .txt{position:absolute;bottom:20px;left:20px;right:20px;color:white;font-family:"Noto Serif TC",serif;font-size:14px;letter-spacing:.08em;line-height:1.7;font-weight:500}
+
+  /* ---- A: FAQ ---- */
+  .a-faq{padding:120px 0;background:var(--paper)}
+  .a-faq .wrap{max-width:780px;margin:0 auto;padding:0 40px}
+  .a-faq .q{border-bottom:1px solid var(--line-soft);padding:24px 0;cursor:pointer;transition:all .3s}
+  .a-faq .q .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+  .a-faq .q .qlbl{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:18px;margin-right:14px;flex-shrink:0}
+  .a-faq .q .qt{font-family:"Noto Serif TC",serif;font-size:17px;font-weight:600;letter-spacing:.05em;flex:1;line-height:1.6}
+  .a-faq .q .ico{width:20px;height:20px;position:relative;flex-shrink:0;transition:transform .4s}
+  .a-faq .q .ico:before,.a-faq .q .ico:after{content:"";position:absolute;background:var(--ink);transition:all .3s}
+  .a-faq .q .ico:before{top:9px;left:0;right:0;height:1px}
+  .a-faq .q .ico:after{left:9px;top:0;bottom:0;width:1px}
+  .a-faq .q.open .ico:after{transform:scaleY(0)}
+  .a-faq .q .a{max-height:0;overflow:hidden;transition:max-height .5s ease;margin-left:32px}
+  .a-faq .q.open .a{max-height:300px}
+  .a-faq .q .a-inner{padding:18px 0 6px;font-size:14px;line-height:2;color:var(--ink-soft)}
+
+  /* ---- A: Notice ---- */
+  .a-notice{padding:80px 0;background:var(--cream)}
+  .a-notice .wrap{max-width:900px;margin:0 auto;padding:0 40px}
+  .a-notice .box{background:var(--haze-2);border:1px solid var(--gold-soft);border-radius:4px;padding:40px 44px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:flex-start}
+  .a-notice .box .ico{width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;color:var(--orange-deep);font-size:22px;font-weight:700}
+  .a-notice h3{font-family:"Noto Serif TC",serif;font-size:22px;letter-spacing:.12em;margin-bottom:14px;font-weight:700}
+  .a-notice ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .a-notice li{font-size:13px;line-height:1.9;color:var(--ink-soft);padding-left:18px;position:relative}
+  .a-notice li:before{content:"※";position:absolute;left:0;color:var(--gold)}
+
+  /* ---- A: Final CTA ---- */
+  .a-final{padding:140px 0;background:linear-gradient(180deg,var(--haze-2) 0%,var(--haze) 100%);text-align:center;position:relative;overflow:hidden}
+  .a-final:before{content:"體 驗";position:absolute;top:40px;left:50%;transform:translateX(-50%);font-family:"Noto Serif TC",serif;font-size:260px;color:rgba(200,100,28,.05);font-weight:700;letter-spacing:.4em;pointer-events:none;line-height:1;white-space:nowrap}
+  .a-final .wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:0 40px}
+  .a-final h2{font-family:"Noto Serif TC",serif;font-size:44px;font-weight:700;letter-spacing:.1em;line-height:1.5;margin-bottom:18px}
+  .a-final h2 em{font-style:normal;color:var(--orange-deep)}
+  .a-final p{font-size:16px;line-height:2;color:var(--ink-soft);margin-bottom:40px;letter-spacing:.08em}
+  .a-final .pillrow{display:flex;justify-content:center;gap:10px;margin-top:34px;flex-wrap:wrap}
+  .a-final .pillrow .p{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.25em;padding:6px 16px;background:white;border:1px solid var(--gold-soft);border-radius:2px;color:var(--ink-soft);font-weight:500}
+
+  /* ---- A: Footer ---- */
+  .a-foot{background:var(--ink);color:var(--cream);padding:60px 0 40px}
+  .a-foot .wrap{max-width:1100px;margin:0 auto;padding:0 40px}
+  .a-foot .fgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(250,246,238,.15)}
+  .a-foot .col h5{font-family:"Noto Serif TC",serif;color:var(--gold);font-size:13px;letter-spacing:.35em;margin-bottom:18px;font-weight:500}
+  .a-foot .col .phone{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:400;letter-spacing:.04em;margin-bottom:8px}
+  .a-foot .col .hours{font-size:12px;opacity:.7;line-height:1.9}
+  .a-foot .col a{display:inline-flex;align-items:center;gap:10px;font-size:14px;padding:12px 22px;border:1px solid rgba(250,246,238,.3);border-radius:999px;transition:all .3s}
+  .a-foot .col a:hover{background:var(--cream);color:var(--ink)}
+  .a-foot .brand-row{display:flex;justify-content:space-between;align-items:center;padding-top:30px;flex-wrap:wrap;gap:20px}
+  .a-foot .brand-row .logo{font-family:"Noto Serif TC",serif;font-size:20px;letter-spacing:.3em;font-weight:500}
+  .a-foot .brand-row .logo em{font-style:normal;color:var(--orange)}
+  .a-foot .copy{font-family:"Noto Sans TC",sans-serif;font-size:11px;opacity:.5;letter-spacing:.05em}
+  .a-foot .social{display:flex;gap:14px}
+  .a-foot .social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(250,246,238,.3);display:flex;align-items:center;justify-content:center;padding:0;font-size:11px;font-family:"Noto Sans TC",sans-serif}
+
+  /* ============================================================
+     PAGE B  —  大膽版（深墨 × 琥珀，高對比編排）
+     ============================================================ */
+  #pageB{background:#0f0b08;color:#e9e2d4}
+  #pageB .maxw{max-width:1200px;margin:0 auto;padding:0 48px}
+  #pageB a{color:inherit}
+
+  .b-topbar{position:absolute;top:0;left:0;right:0;z-index:10;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .b-topbar .logo{font-family:"Noto Serif TC",serif;font-size:22px;letter-spacing:.35em;font-weight:500;color:#e9e2d4}
+  .b-topbar .logo em{font-style:normal;color:var(--orange)}
+  .b-topbar .nav{display:flex;gap:32px;font-family:"Noto Sans TC",sans-serif;font-size:12px;letter-spacing:.25em;color:rgba(233,226,212,.7)}
+  .b-topbar .jlang{font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.3em;color:var(--orange);font-weight:500}
+
+  .b-hero{min-height:100vh;position:relative;padding:120px 0 80px;overflow:hidden;background:
+    radial-gradient(ellipse 60% 80% at 80% 50%,rgba(232,131,58,.18) 0%,transparent 60%),
+    #0f0b08
+  }
+  .b-hero .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;min-height:calc(100vh - 200px)}
+  .b-hero .big-jp{
+    position:absolute;top:10%;left:-20px;
+    writing-mode:vertical-rl;
+    font-family:"Noto Serif TC",serif;
+    font-size:140px;font-weight:800;letter-spacing:.15em;line-height:1;
+    color:rgba(232,131,58,.08);
+    pointer-events:none;white-space:nowrap;
+  }
+  .b-hero .left{position:relative;z-index:2}
+  .b-hero .kicker{display:inline-flex;align-items:center;gap:14px;margin-bottom:28px}
+  .b-hero .kicker .ln{width:50px;height:1px;background:var(--orange)}
+  .b-hero .kicker .txt{font-family:"Noto Serif TC",serif;font-size:14px;color:var(--orange);letter-spacing:.35em;font-weight:500}
+  .b-hero h1{font-family:"Noto Serif TC",serif;font-size:80px;font-weight:700;line-height:1.05;letter-spacing:.02em;color:#f5ede0}
+  .b-hero h1 .line2{display:block;color:var(--orange);font-weight:800;margin-top:8px}
+  .b-hero h1 em{font-style:normal;font-family:"Cormorant Garamond",serif;font-weight:500}
+  .b-hero .strap{margin-top:40px;font-size:18px;line-height:2;max-width:480px;color:rgba(233,226,212,.75);letter-spacing:.06em;font-weight:400}
+  .b-hero .hero-cta{margin-top:48px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .b-hero .btn-b{
+    display:inline-flex;align-items:center;gap:18px;
+    padding:22px 40px;background:var(--orange);color:#0f0b08;
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:16px;letter-spacing:.3em;
+    border-radius:0;position:relative;overflow:hidden;transition:all .4s;
+  }
+  .b-hero .btn-b:hover{background:#f5ede0;padding-right:50px}
+  .b-hero .btn-b .ar{font-size:22px;margin-left:4px;transition:transform .3s;letter-spacing:0}
+  .b-hero .btn-b:hover .ar{transform:translateX(6px)}
+  .b-hero .secondary{font-family:"Noto Serif TC",serif;color:rgba(233,226,212,.7);font-size:14px;letter-spacing:.2em;border-bottom:1px solid rgba(233,226,212,.3);padding-bottom:4px;transition:all .3s;cursor:pointer}
+  .b-hero .secondary:hover{color:var(--orange);border-color:var(--orange)}
+
+  .b-hero .right{position:relative;height:100%;display:flex;align-items:center;justify-content:center;min-height:500px}
+  .b-hero .right .glow{position:absolute;inset:-10% -20%;background:radial-gradient(ellipse at 50% 50%,rgba(232,131,58,.4) 0%,transparent 60%);filter:blur(20px)}
+  .b-hero .right .bshape{position:relative;z-index:2;max-width:260px;width:70%}
+  .b-hero .right .meta-lines{position:absolute;top:10%;right:0;z-index:3;display:flex;flex-direction:column;gap:20px;text-align:right}
+  .b-hero .right .meta-lines .m{font-family:"Noto Sans TC",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(233,226,212,.55)}
+  .b-hero .right .meta-lines .m:before{content:"—  "}
+  .b-hero .price-tag{position:absolute;bottom:8%;left:-10%;z-index:3;background:#f5ede0;color:#0f0b08;padding:24px 32px;border-radius:2px;transform:rotate(-4deg);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .b-hero .price-tag .lbl{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.35em;margin-bottom:6px;color:var(--orange-deep);font-weight:500}
+  .b-hero .price-tag .p{font-family:"Cormorant Garamond",serif;font-size:42px;color:#0f0b08;line-height:1;font-weight:500}
+  .b-hero .price-tag .p .cur{font-size:18px;vertical-align:top}
+  .b-hero .price-tag .sub{font-family:"Noto Sans TC",sans-serif;font-size:11px;color:rgba(15,11,8,.6);letter-spacing:.1em;margin-top:6px}
+
+  .b-hero .metrics{position:absolute;bottom:30px;left:48px;right:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(233,226,212,.15);padding-top:28px;max-width:1104px;margin:0 auto}
+  .b-hero .metrics .cell{display:flex;flex-direction:column;gap:4px;border-left:1px solid rgba(233,226,212,.15);padding-left:24px}
+  .b-hero .metrics .cell:first-child{border-left:0;padding-left:0}
+  .b-hero .metrics .n{font-family:"Cormorant Garamond",serif;font-size:38px;color:var(--orange);line-height:1;font-weight:500}
+  .b-hero .metrics .n .s{font-size:18px;opacity:.6;vertical-align:top}
+  .b-hero .metrics .l{font-family:"Noto Sans TC",sans-serif;font-size:11px;color:rgba(233,226,212,.6);letter-spacing:.25em;margin-top:8px}
+
+  .b-marquee{background:#1a120a;padding:20px 0;overflow:hidden;border-top:1px solid rgba(232,131,58,.2);border-bottom:1px solid rgba(232,131,58,.2)}
+  .b-marquee .track{display:flex;gap:40px;animation:slide 50s linear infinite;white-space:nowrap;font-family:"Noto Serif TC",serif;color:var(--orange);letter-spacing:.3em;font-size:14px;font-weight:500}
+  .b-marquee .track span{flex-shrink:0}
+  .b-marquee .dot{color:rgba(232,131,58,.3);font-size:18px}
+  @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  .b-story{padding:160px 0;background:#0f0b08;position:relative}
+  .b-story .row{display:grid;grid-template-columns:1fr 1.4fr;gap:100px;align-items:flex-start;position:relative}
+  .b-story .sidekick{position:sticky;top:80px}
+  .b-story .sidekick .vert{writing-mode:vertical-rl;font-family:"Noto Serif TC",serif;font-size:14px;letter-spacing:.5em;color:var(--orange);margin-bottom:40px;font-weight:500}
+  .b-story .sidekick .sec-num{font-family:"Cormorant Garamond",serif;font-style:italic;color:rgba(233,226,212,.3);font-size:100px;line-height:1;font-weight:400}
+  .b-story .sidekick .sec-lbl{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.35em;color:rgba(233,226,212,.5);margin-top:10px;font-weight:500}
+
+  .b-story h2{font-family:"Noto Serif TC",serif;font-size:52px;font-weight:700;line-height:1.35;letter-spacing:.04em;color:#f5ede0;margin-bottom:30px}
+  .b-story h2 em{font-style:normal;color:var(--orange);position:relative}
+  .b-story h2 em:after{content:"";position:absolute;left:0;bottom:-6px;right:0;height:1px;background:var(--orange)}
+  .b-story .lede{font-size:17px;line-height:2.1;color:rgba(233,226,212,.7);max-width:600px;margin-bottom:60px;letter-spacing:.05em}
+
+  .b-story .feats{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(232,131,58,.15)}
+  .b-story .fcell{background:#0f0b08;padding:40px 36px;transition:background .4s;cursor:pointer}
+  .b-story .fcell:hover{background:#1a120a}
+  .b-story .fcell .head{display:flex;justify-content:space-between;margin-bottom:20px;align-items:center}
+  .b-story .fcell .head .fidx{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--orange);font-size:20px}
+  .b-story .fcell .head .jlab{font-family:"Noto Serif TC",serif;color:rgba(233,226,212,.4);font-size:12px;letter-spacing:.35em;font-weight:500}
+  .b-story .fcell h3{font-family:"Noto Serif TC",serif;font-size:22px;color:#f5ede0;line-height:1.5;letter-spacing:.06em;margin-bottom:14px;font-weight:700}
+  .b-story .fcell p{font-size:13px;line-height:1.9;color:rgba(233,226,212,.6)}
+  .b-story .fcell .pct{font-family:"Cormorant Garamond",serif;font-size:46px;color:var(--orange);line-height:1;font-weight:500;margin-top:20px}
+  .b-story .fcell .pct .s{font-size:18px;vertical-align:top}
+
+  .b-ingr{padding:160px 0;background:linear-gradient(180deg,#0f0b08 0%,#1a120a 100%);position:relative;overflow:hidden}
+  .b-ingr .watermark{position:absolute;top:60px;right:-50px;font-family:"Noto Serif TC",serif;font-size:200px;font-weight:900;color:rgba(232,131,58,.05);letter-spacing:.15em;line-height:.9;pointer-events:none;white-space:nowrap}
+  .b-ingr .lbl-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px;flex-wrap:wrap;gap:16px}
+  .b-ingr .lbl-row .n{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--orange);letter-spacing:.3em}
+  .b-ingr .lbl-row .c{font-family:"Noto Sans TC",sans-serif;font-size:12px;color:rgba(233,226,212,.5);letter-spacing:.3em}
+  .b-ingr h2{font-family:"Noto Serif TC",serif;font-size:52px;font-weight:700;line-height:1.3;color:#f5ede0;margin-bottom:60px;letter-spacing:.04em;max-width:800px}
+  .b-ingr h2 em{font-style:normal;color:var(--orange)}
+  .b-ingr .tray{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .b-ingr .icard{background:rgba(245,237,224,.03);border:1px solid rgba(232,131,58,.15);padding:36px;border-radius:2px;transition:all .4s;position:relative;overflow:hidden}
+  .b-ingr .icard:hover{background:rgba(232,131,58,.08);border-color:var(--orange);transform:translateY(-6px)}
+  .b-ingr .icard .imgbox{aspect-ratio:4/3;margin-bottom:24px;border-radius:2px;background:
+    repeating-linear-gradient(45deg,rgba(232,131,58,.15) 0 2px,transparent 2px 12px),
+    linear-gradient(135deg,#3a2618,#5a3a20);
+    position:relative;overflow:hidden
+  }
+  .b-ingr .icard .imgbox:after{content:attr(data-label);position:absolute;bottom:10px;left:12px;font-family:"Noto Sans TC",sans-serif;font-size:10px;color:rgba(232,131,58,.75);letter-spacing:.15em}
+  .b-ingr .icard .jp{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:13px;letter-spacing:.35em;margin-bottom:10px;font-weight:500}
+  .b-ingr .icard h3{font-family:"Noto Serif TC",serif;font-size:22px;color:#f5ede0;margin-bottom:10px;font-weight:700;letter-spacing:.06em}
+  .b-ingr .icard .en{font-family:"Noto Serif TC",serif;color:rgba(233,226,212,.55);font-size:14px;margin-bottom:16px;letter-spacing:.15em}
+  .b-ingr .icard p{font-size:13px;line-height:1.95;color:rgba(233,226,212,.65)}
+
+  .b-offer{padding:160px 0;background:#f5ede0;color:#0f0b08;position:relative;overflow:hidden}
+  .b-offer .head{text-align:center;margin-bottom:70px}
+  .b-offer .head .k{font-family:"Noto Serif TC",serif;color:var(--orange-deep);font-size:14px;letter-spacing:.4em;margin-bottom:16px;font-weight:500}
+  .b-offer .head h2{font-family:"Noto Serif TC",serif;font-size:52px;font-weight:700;line-height:1.35;letter-spacing:.06em}
+  .b-offer .head h2 .num{color:var(--orange-deep);font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;font-size:70px;vertical-align:-2px}
+
+  .b-offer .tray2{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+  .b-offer .bcard{background:white;border-radius:3px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(200,100,28,.15);transition:all .5s}
+  .b-offer .bcard:hover{transform:translateY(-10px);box-shadow:0 40px 100px rgba(200,100,28,.3)}
+  .b-offer .bcard .top{padding:40px 40px 30px;border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .b-offer .bcard .top .t1{font-family:"Noto Serif TC",serif;font-size:28px;font-weight:700;letter-spacing:.1em;color:#0f0b08;margin-top:6px}
+  .b-offer .bcard .top .jp{font-family:"Noto Serif TC",serif;color:var(--orange-deep);font-size:13px;letter-spacing:.4em;font-weight:500}
+  .b-offer .bcard .top .vol{font-family:"Noto Sans TC",sans-serif;font-size:13px;color:var(--ink-soft);margin-top:6px;letter-spacing:.1em}
+  .b-offer .bcard .top .badge{background:#0f0b08;color:#f5ede0;padding:8px 16px;font-family:"Noto Serif TC",serif;font-size:11px;letter-spacing:.35em;white-space:nowrap;font-weight:500}
+  .b-offer .bcard.light .top .badge{background:var(--orange-deep)}
+
+  .b-offer .bcard .mid{padding:40px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+  .b-offer .bcard .mid .pshape{width:100px}
+  .b-offer .bcard .mid .meta{display:flex;flex-direction:column;gap:14px}
+  .b-offer .bcard .mid .meta .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .b-offer .bcard .mid .meta .tags span{font-family:"Noto Serif TC",serif;font-size:11px;letter-spacing:.25em;padding:5px 12px;background:var(--haze);color:var(--orange-deep);font-weight:500}
+  .b-offer .bcard .mid .meta p{font-size:13px;line-height:1.9;color:var(--ink-soft)}
+
+  .b-offer .bcard .bot{padding:30px 40px 40px;background:#faf4e8;display:flex;flex-direction:column;gap:18px}
+  .b-offer .bcard .bot .pr-row{display:flex;align-items:baseline;gap:14px}
+  .b-offer .bcard .bot .pr-row .old{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--ink-soft);text-decoration:line-through;font-weight:400}
+  .b-offer .bcard .bot .pr-row .off{background:var(--orange-deep);color:white;font-family:"Noto Sans TC",sans-serif;font-size:12px;padding:3px 10px;letter-spacing:.1em;font-weight:500}
+  .b-offer .bcard .bot .big{font-family:"Cormorant Garamond",serif;font-size:76px;line-height:.9;color:var(--orange-deep);font-weight:500;letter-spacing:-.02em;display:flex;align-items:baseline;gap:4px}
+  .b-offer .bcard .bot .big .cur{font-size:30px;line-height:1}
+  .b-offer .bcard .bot .big .suf{font-family:"Noto Serif TC",serif;font-size:16px;color:var(--ink-soft);margin-left:10px;font-weight:500;letter-spacing:.2em}
+  .b-offer .bcard .bot .cta-b{
+    margin-top:8px;display:flex;align-items:center;justify-content:center;gap:14px;
+    padding:20px;background:#0f0b08;color:#f5ede0;
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:15px;letter-spacing:.35em;
+    transition:all .3s;
+  }
+  .b-offer .bcard .bot .cta-b:hover{background:var(--orange-deep)}
+  .b-offer .bcard .bot .cta-b .ar{font-size:18px;letter-spacing:0}
+
+  .b-countdown{margin-top:70px;max-width:620px;margin-left:auto;margin-right:auto;text-align:center;padding:40px 30px;background:#0f0b08;color:#f5ede0;border-radius:3px}
+  .b-countdown .k{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:13px;letter-spacing:.35em;margin-bottom:14px;font-weight:500}
+  .b-countdown h3{font-family:"Noto Serif TC",serif;font-size:22px;margin-bottom:24px;letter-spacing:.1em;font-weight:700}
+  .b-countdown .clock{display:flex;justify-content:center;gap:18px}
+  .b-countdown .c-cell{min-width:76px}
+  .b-countdown .c-num{font-family:"Cormorant Garamond",serif;font-size:52px;color:var(--orange);line-height:1;font-variant-numeric:tabular-nums;font-weight:500}
+  .b-countdown .c-unit{font-family:"Noto Sans TC",sans-serif;font-size:11px;letter-spacing:.3em;margin-top:6px;color:rgba(233,226,212,.55)}
+
+  .b-trust2{padding:140px 0;background:#0f0b08}
+  .b-trust2 .head{text-align:center;margin-bottom:80px}
+  .b-trust2 .head .k{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:14px;letter-spacing:.35em;margin-bottom:14px;font-weight:500}
+  .b-trust2 .head h2{font-family:"Noto Serif TC",serif;font-size:52px;color:#f5ede0;font-weight:700;letter-spacing:.08em}
+  .b-trust2 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(233,226,212,.15);border-bottom:1px solid rgba(233,226,212,.15)}
+  .b-trust2 .tbox{padding:50px 32px;border-right:1px solid rgba(233,226,212,.15);text-align:center;position:relative;transition:background .4s}
+  .b-trust2 .tbox:last-child{border-right:0}
+  .b-trust2 .tbox:hover{background:rgba(232,131,58,.06)}
+  .b-trust2 .tbox .n{font-family:"Cormorant Garamond",serif;font-size:72px;color:var(--orange);line-height:1;font-weight:500}
+  .b-trust2 .tbox .n .s{font-size:28px;vertical-align:top}
+  .b-trust2 .tbox .l{font-family:"Noto Serif TC",serif;font-size:15px;color:#f5ede0;letter-spacing:.15em;margin-top:18px;line-height:1.6;font-weight:600}
+  .b-trust2 .tbox .e{font-family:"Noto Sans TC",sans-serif;color:rgba(233,226,212,.55);font-size:11px;margin-top:8px;letter-spacing:.25em}
+
+  .b-reviews2{padding:140px 0;background:linear-gradient(180deg,#0f0b08 0%,#1a120a 100%)}
+  .b-reviews2 .head{margin-bottom:60px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .b-reviews2 .head h2{font-family:"Noto Serif TC",serif;font-size:48px;color:#f5ede0;font-weight:700;letter-spacing:.04em;line-height:1.4;max-width:620px}
+  .b-reviews2 .head h2 em{font-style:normal;color:var(--orange)}
+  .b-reviews2 .head .meta{text-align:right}
+  .b-reviews2 .head .meta .rating{font-family:"Cormorant Garamond",serif;font-size:60px;color:var(--orange);line-height:1;font-weight:500}
+  .b-reviews2 .head .meta .rating .s{font-size:22px;color:rgba(233,226,212,.5)}
+  .b-reviews2 .head .meta .stars{color:var(--orange);letter-spacing:.15em;margin-top:6px}
+  .b-reviews2 .head .meta .cnt{font-family:"Noto Sans TC",sans-serif;font-size:11px;color:rgba(233,226,212,.5);letter-spacing:.2em;margin-top:6px}
+  .b-reviews2 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .b-reviews2 .rcard2{background:rgba(245,237,224,.03);border:1px solid rgba(232,131,58,.15);padding:36px;position:relative;transition:all .4s}
+  .b-reviews2 .rcard2:hover{border-color:var(--orange);background:rgba(232,131,58,.05)}
+  .b-reviews2 .rcard2 .mark{font-family:"Cormorant Garamond",serif;font-size:80px;color:var(--orange);line-height:.6;font-style:italic;margin-bottom:10px}
+  .b-reviews2 .rcard2 .rt{font-family:"Noto Serif TC",serif;font-size:18px;color:#f5ede0;line-height:1.7;letter-spacing:.05em;margin-bottom:14px;font-weight:700}
+  .b-reviews2 .rcard2 .rb{font-size:13px;line-height:2;color:rgba(233,226,212,.7)}
+  .b-reviews2 .rcard2 .user{margin-top:24px;padding-top:20px;border-top:1px solid rgba(232,131,58,.15);display:flex;justify-content:space-between;align-items:center}
+  .b-reviews2 .rcard2 .user .who{font-family:"Noto Serif TC",serif;font-size:13px;color:#f5ede0;letter-spacing:.12em;font-weight:500}
+  .b-reviews2 .rcard2 .user .age{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--orange);font-size:14px}
+
+  .b-steps2{padding:140px 0;background:#0f0b08}
+  .b-steps2 .head{text-align:center;margin-bottom:80px}
+  .b-steps2 .head .k{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:14px;letter-spacing:.35em;margin-bottom:14px;font-weight:500}
+  .b-steps2 .head h2{font-family:"Noto Serif TC",serif;font-size:48px;color:#f5ede0;font-weight:700;letter-spacing:.06em}
+
+  .b-steps2 .line{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px}
+  .b-steps2 .line:before{content:"";position:absolute;left:0;right:0;top:48px;height:1px;background:linear-gradient(90deg,transparent,var(--orange) 20%,var(--orange) 80%,transparent);z-index:0}
+  .b-steps2 .sp{position:relative;z-index:2;text-align:center;padding:0 20px}
+  .b-steps2 .sp .circ{width:96px;height:96px;border:1px solid var(--orange);border-radius:50%;margin:0 auto 24px;background:#0f0b08;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .4s}
+  .b-steps2 .sp:hover .circ{background:var(--orange);color:#0f0b08}
+  .b-steps2 .sp .circ .j{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.25em;color:var(--orange);transition:color .4s;font-weight:500}
+  .b-steps2 .sp:hover .circ .j{color:#0f0b08}
+  .b-steps2 .sp .circ .n{font-family:"Cormorant Garamond",serif;font-size:30px;color:#f5ede0;line-height:1;font-weight:500;margin-top:2px;transition:color .4s}
+  .b-steps2 .sp:hover .circ .n{color:#0f0b08}
+  .b-steps2 .sp h4{font-family:"Noto Serif TC",serif;font-size:20px;color:#f5ede0;font-weight:700;margin-bottom:10px;letter-spacing:.12em}
+  .b-steps2 .sp p{font-size:13px;line-height:1.9;color:rgba(233,226,212,.6)}
+
+  .b-faq2{padding:140px 0;background:#1a120a}
+  .b-faq2 .wrap{max-width:880px;margin:0 auto;padding:0 48px}
+  .b-faq2 .head{text-align:center;margin-bottom:60px}
+  .b-faq2 .head .k{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:14px;letter-spacing:.35em;margin-bottom:14px;font-weight:500}
+  .b-faq2 .head h2{font-family:"Noto Serif TC",serif;font-size:44px;color:#f5ede0;font-weight:700;letter-spacing:.1em}
+  .b-faq2 .qq{border-top:1px solid rgba(233,226,212,.15);padding:28px 0;cursor:pointer;transition:all .3s}
+  .b-faq2 .qq:last-of-type{border-bottom:1px solid rgba(233,226,212,.15)}
+  .b-faq2 .qq .top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+  .b-faq2 .qq .l{display:flex;gap:18px;flex:1;align-items:flex-start}
+  .b-faq2 .qq .idx{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--orange);font-size:18px;flex-shrink:0}
+  .b-faq2 .qq .t{font-family:"Noto Serif TC",serif;font-size:18px;color:#f5ede0;letter-spacing:.05em;font-weight:600;line-height:1.6}
+  .b-faq2 .qq .ic{width:24px;height:24px;position:relative;flex-shrink:0}
+  .b-faq2 .qq .ic:before,.b-faq2 .qq .ic:after{content:"";position:absolute;background:var(--orange);transition:transform .3s}
+  .b-faq2 .qq .ic:before{top:11px;left:0;right:0;height:1px}
+  .b-faq2 .qq .ic:after{left:11px;top:0;bottom:0;width:1px}
+  .b-faq2 .qq.open .ic:after{transform:scaleY(0)}
+  .b-faq2 .qq .a{max-height:0;overflow:hidden;transition:max-height .5s;margin-left:40px}
+  .b-faq2 .qq.open .a{max-height:400px}
+  .b-faq2 .qq .a-in{padding:18px 0 6px;font-size:14px;line-height:2;color:rgba(233,226,212,.7)}
+
+  .b-final2{padding:180px 0;background:#0f0b08;position:relative;overflow:hidden}
+  .b-final2 .bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:"Noto Serif TC",serif;font-size:280px;font-weight:900;color:rgba(232,131,58,.07);letter-spacing:.3em;line-height:.9;pointer-events:none;white-space:nowrap}
+  .b-final2 .inner{position:relative;z-index:2;text-align:center;max-width:720px;margin:0 auto;padding:0 48px}
+  .b-final2 .k{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:15px;letter-spacing:.4em;margin-bottom:24px;font-weight:500}
+  .b-final2 h2{font-family:"Noto Serif TC",serif;font-size:68px;font-weight:800;line-height:1.2;color:#f5ede0;letter-spacing:.04em;margin-bottom:30px}
+  .b-final2 h2 em{font-style:normal;color:var(--orange)}
+  .b-final2 p{font-size:17px;line-height:2.1;color:rgba(233,226,212,.7);margin-bottom:50px;letter-spacing:.06em;max-width:520px;margin-left:auto;margin-right:auto}
+  .b-final2 .big-btn{
+    display:inline-flex;align-items:center;gap:20px;
+    padding:26px 60px;background:var(--orange);color:#0f0b08;
+    font-family:"Noto Serif TC",serif;font-weight:700;font-size:17px;letter-spacing:.35em;
+    transition:all .4s;position:relative;overflow:hidden
+  }
+  .b-final2 .big-btn:hover{background:#f5ede0;letter-spacing:.45em}
+  .b-final2 .dnote{margin-top:30px;font-family:"Noto Sans TC",sans-serif;font-size:12px;color:rgba(233,226,212,.5);letter-spacing:.2em}
+
+  .b-foot2{background:#0a0705;color:rgba(233,226,212,.8);padding:70px 0 40px;border-top:1px solid rgba(233,226,212,.1)}
+  .b-foot2 .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+  .b-foot2 .f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(233,226,212,.1)}
+  .b-foot2 .fb-col h5{font-family:"Noto Serif TC",serif;color:var(--orange);font-size:13px;letter-spacing:.35em;margin-bottom:18px;font-weight:500}
+  .b-foot2 .fb-col .lg{font-family:"Noto Serif TC",serif;font-size:24px;letter-spacing:.3em;font-weight:500;color:#f5ede0;margin-bottom:16px}
+  .b-foot2 .fb-col .lg em{font-style:normal;color:var(--orange)}
+  .b-foot2 .fb-col .desc{font-size:13px;line-height:1.95;color:rgba(233,226,212,.55);max-width:260px}
+  .b-foot2 .fb-col .phone{font-family:"Cormorant Garamond",serif;font-size:28px;color:#f5ede0;letter-spacing:.04em;line-height:1;margin-bottom:8px}
+  .b-foot2 .fb-col .hours{font-size:12px;color:rgba(233,226,212,.55);line-height:1.9}
+  .b-foot2 .fb-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .b-foot2 .fb-col ul a{font-size:13px;color:rgba(233,226,212,.7);transition:color .3s}
+  .b-foot2 .fb-col ul a:hover{color:var(--orange)}
+  .b-foot2 .fcopy{padding-top:30px;display:flex;justify-content:space-between;align-items:center;font-family:"Noto Sans TC",sans-serif;font-size:11px;color:rgba(233,226,212,.4);letter-spacing:.08em;flex-wrap:wrap;gap:16px}
+  .b-foot2 .social2{display:flex;gap:12px}
+  .b-foot2 .social2 a{width:36px;height:36px;border:1px solid rgba(233,226,212,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-family:"Noto Sans TC",sans-serif;transition:all .3s}
+  .b-foot2 .social2 a:hover{border-color:var(--orange);color:var(--orange)}
+
+  /* ---- Modal ---- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(15,11,8,.7);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .3s}
+  .modal-overlay.on{display:flex;opacity:1}
+  .modal{background:var(--cream);color:var(--ink);width:100%;max-width:560px;border-radius:4px;padding:48px 48px 42px;position:relative;transform:translateY(20px);transition:transform .4s cubic-bezier(.2,.6,.2,1);max-height:90vh;overflow-y:auto}
+  .modal-overlay.on .modal{transform:none}
+  .modal .close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--ink-soft);transition:all .3s}
+  .modal .close:hover{background:var(--haze);color:var(--ink)}
+  .modal .mhead{text-align:center;margin-bottom:30px;padding-bottom:24px;border-bottom:1px solid var(--line-soft)}
+  .modal .mhead .k{font-family:"Noto Serif TC",serif;color:var(--orange-deep);font-size:13px;letter-spacing:.35em;margin-bottom:10px;font-weight:500}
+  .modal .mhead h3{font-family:"Noto Serif TC",serif;font-size:28px;font-weight:700;letter-spacing:.08em}
+  .modal .mhead p{margin-top:10px;font-size:13px;color:var(--ink-soft);letter-spacing:.1em}
+
+  .modal .step-indicator{display:flex;justify-content:center;gap:16px;margin-bottom:30px;align-items:center}
+  .modal .sti{display:flex;align-items:center;gap:10px}
+  .modal .sti .nn{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;color:var(--ink-soft);transition:all .3s}
+  .modal .sti .ll{font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.2em;color:var(--ink-soft);transition:all .3s;font-weight:500}
+  .modal .sti.active .nn{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .modal .sti.active .ll{color:var(--ink);font-weight:700}
+  .modal .sti.done .nn{background:var(--orange);border-color:var(--orange);color:white}
+  .modal .connector{width:30px;height:1px;background:var(--line)}
+
+  .modal .mstep{display:none}
+  .modal .mstep.on{display:block;animation:fadeIn .4s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .modal .fg{margin-bottom:18px}
+  .modal .fg label{display:block;font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.15em;margin-bottom:8px;color:var(--ink);font-weight:500}
+  .modal .fg label .req{color:var(--orange-deep);margin-left:4px}
+  .modal .fg input,.modal .fg select{width:100%;padding:14px 16px;border:1px solid var(--line);background:white;font-family:"Noto Serif TC",serif;font-size:14px;color:var(--ink);border-radius:2px;transition:border-color .3s}
+  .modal .fg input:focus,.modal .fg select:focus{outline:none;border-color:var(--orange)}
+
+  .modal .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .modal .choice{border:1px solid var(--line);padding:18px;border-radius:2px;cursor:pointer;text-align:center;transition:all .3s;background:white}
+  .modal .choice:hover{border-color:var(--orange)}
+  .modal .choice.on{border-color:var(--ink);background:var(--cream-2)}
+  .modal .choice .pshape{width:50px;margin:0 auto 12px}
+  .modal .choice .cn{font-family:"Noto Serif TC",serif;font-size:14px;font-weight:700;letter-spacing:.1em;margin-bottom:4px}
+  .modal .choice .cp{font-family:"Cormorant Garamond",serif;color:var(--orange-deep);font-size:20px;font-weight:500}
+  .modal .choice .cp .cur{font-size:12px;vertical-align:top;margin-right:2px}
+
+  .modal .mbuttons{margin-top:24px;display:flex;gap:10px;justify-content:space-between;align-items:center}
+  .modal .mbuttons .back{font-family:"Noto Serif TC",serif;color:var(--ink-soft);font-size:14px;letter-spacing:.15em;border-bottom:1px solid transparent;padding-bottom:2px;transition:all .3s}
+  .modal .mbuttons .back:hover{color:var(--ink);border-color:var(--ink)}
+  .modal .mbuttons .next{padding:14px 30px;background:var(--ink);color:var(--cream);font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.3em;font-weight:500;border-radius:999px;display:inline-flex;align-items:center;gap:10px;transition:all .3s}
+  .modal .mbuttons .next:hover{background:var(--orange-deep)}
+  .modal .mbuttons .next:disabled{opacity:.4;cursor:not-allowed}
+
+  .modal .success{text-align:center;padding:16px 0}
+  .modal .success .check{width:80px;height:80px;border:1px solid var(--orange);border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;color:var(--orange-deep);font-size:32px;font-family:"Noto Serif TC",serif;animation:pop .5s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+  .modal .success h3{font-family:"Noto Serif TC",serif;font-size:24px;margin-bottom:12px;letter-spacing:.1em;font-weight:700}
+  .modal .success p{font-size:14px;line-height:2;color:var(--ink-soft);margin-bottom:24px}
+  .modal .success .summary{background:var(--haze-2);padding:20px;border-radius:2px;margin-bottom:24px;text-align:left}
+  .modal .success .summary .row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;gap:10px}
+  .modal .success .summary .row .k{color:var(--ink-soft);font-family:"Noto Serif TC",serif;letter-spacing:.1em}
+  .modal .success .summary .row .v{font-family:"Noto Sans TC",sans-serif;color:var(--ink);font-weight:500;text-align:right}
+
+  /* floating CTA bar */
+  .float-cta{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);z-index:70;transition:transform .5s cubic-bezier(.2,.8,.2,1);background:var(--ink);color:var(--cream);display:flex;align-items:center;gap:20px;padding:8px 8px 8px 28px;border-radius:999px;box-shadow:0 16px 50px rgba(26,20,16,.25);max-width:calc(100vw - 40px)}
+  .float-cta.show{transform:translateX(-50%) translateY(0)}
+  .float-cta .price{font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--orange);font-weight:500;line-height:1}
+  .float-cta .price .cur{font-size:13px;vertical-align:top;margin-right:2px}
+  .float-cta .lbl{font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:.2em;opacity:.75;font-weight:500}
+  .float-cta .fbtn{background:var(--orange);color:#0f0b08;padding:12px 22px;border-radius:999px;font-family:"Noto Serif TC",serif;font-size:13px;letter-spacing:.25em;font-weight:700;transition:all .3s}
+  .float-cta .fbtn:hover{background:#f5ede0}
+
+  @media (max-width:960px){
+    .a-hero .grid{grid-template-columns:1fr}
+    .a-benefits .bgrid,.b-story .feats{grid-template-columns:1fr 1fr}
+    .a-offers .cards,.b-offer .tray2,.a-reviews .rgrid{grid-template-columns:1fr}
+    .b-ingr .tray,.b-reviews2 .rgrid,.a-trust .row{grid-template-columns:1fr 1fr}
+    .b-hero .grid,.b-story .row,.a-story .row{grid-template-columns:1fr}
+    .b-hero h1{font-size:52px}.b-final2 h2{font-size:44px}
+    .b-hero .big-jp{display:none}
+    .b-trust2 .grid4{grid-template-columns:1fr 1fr}
+    .b-trust2 .tbox:nth-child(2){border-right:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <button data-v="A" class="on"><span class="v">i.</span>保守版</button>
+  <button data-v="B"><span class="v">ii.</span>大膽版</button>
+</div>
+
+<!-- ==================== VERSION A ==================== -->
+<div id="pageA" class="page on" data-screen-label="01 保守版">
+
+  <header class="a-topbar">
+    <div class="brand"><em>三得利SUNTORY</em> vitoas蜜得絲</div>
+    <div class="meta">
+      <span>日本製造</span>
+      <span>全台免運</span>
+      <span>首購限定</span>
+    </div>
+  </header>
+
+  <section class="a-hero">
+    <div class="jp-vertical">光　彩　肌　的　十　日　物　語<span class="dot"></span></div>
+
+    <div class="grid">
+      <div class="left reveal">
+        <div class="kicker">十日一瓶・晨間儀式</div>
+        <h1>還沒使用過<br>透光瓶嗎？<br><span class="gold">10 日透光體驗</span>，現正展開。</h1>
+        <p class="sub">一日一滴，以晨間儀式喚醒肌底透光。<br>源自日本，為現代女性譜寫的十日小小物語。</p>
+        <div class="tag-row">
+          <span class="tag">日本製造</span>
+          <span class="tag">全台免運</span>
+          <span class="tag">首購專屬</span>
+        </div>
+      </div>
+
+      <div class="product reveal d2">
+        <div class="circle"></div>
+        <div class="stamp">
+          <div class="n">10</div>
+          <div class="t2">天體驗</div>
+          <div class="t">限 時 優 惠</div>
+        </div>
+        <img src="VT.png" alt="vitoas" style="width:100%;max-width:280px;margin:0 auto;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+          <div class="cap"></div>
+          <div class="nozzle"></div>
+          <div class="collar"></div>
+          <div class="body">
+            <div class="label">
+              <div class="brand">三得利SUNTORY</div>
+              <div><span class="dash"></span></div>
+              <div class="sub">vitoas蜜得絲</div>
+              <div class="line-italic">3 stories · 5 effects · 1 time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right reveal d3">
+        <div class="feat">
+          <div class="idx">壱</div>
+          <div>
+            <div class="t">透光三重複合</div>
+            <div class="d">獨家透光成分，喚醒肌底光感</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="idx">弐</div>
+          <div>
+            <div class="t">八種東方漢方</div>
+            <div class="d">深層滋養，由內而外煥發光澤</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="idx">参</div>
+          <div>
+            <div class="t">十日實感改變</div>
+            <div class="d">每日一滴，第三天即能感受差異</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="idx">肆</div>
+          <div>
+            <div class="t">無香料・無色素</div>
+            <div class="d">低刺激配方，敏感肌也能安心使用</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">向 下 探 索</div>
+  </section>
+
+  <section class="a-benefits">
+    <div class="maxw">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其一 —<span class="hr"></span></div>
+        <h2>三 重 效 能、一 瓶 光 感</h2>
+        <div class="en">三種故事　五種效果　一次完成</div>
+      </div>
+      <div class="bgrid">
+        <div class="bcell reveal">
+          <div class="vnum">壱</div>
+          <div class="icon">光</div>
+          <h3>透 光</h3>
+          <div class="en">── 煥 彩 光 澤 ──</div>
+          <p>獨家三重透光複合物，提亮黯沉肌底，喚醒如光般的清透質感，讓肌膚從內而外綻放自然光澤。</p>
+        </div>
+        <div class="bcell reveal d2">
+          <div class="vnum">弐</div>
+          <div class="icon">潤</div>
+          <h3>潤 澤</h3>
+          <div class="en">── 豐 盈 飽 滿 ──</div>
+          <p>8 種東方植萃深度滋養，24 小時鎖水，即使乾燥季節也能維持豐潤柔嫩的光感肌理。</p>
+        </div>
+        <div class="bcell reveal d3">
+          <div class="vnum">参</div>
+          <div class="icon">緻</div>
+          <h3>緻 密</h3>
+          <div class="en">── 精 煉 細 紋 ──</div>
+          <p>溫和煥膚成分，循序漸進精煉毛孔與紋理，使肌膚觸感如絹緞般平滑細緻。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-story">
+    <div class="row">
+      <div class="imgbox reveal">
+        <div class="seal"><div class="j">和</div><div class="e">Since<br>1899</div></div>
+      </div>
+      <div class="reveal d2">
+        <div class="jp-side">素　材　的　物　語</div>
+        <h2>百年職人智慧，<br><em>一滴凝縮</em>。</h2>
+        <p>京都宇治茶園的綠茶精華，與北海道雪融水相遇，在百年職人手中蛻變為肌膚的透光儀式。每一瓶，都承載著時間的重量。</p>
+        <div class="ingr-list">
+          <div class="ingr"><div class="pct">8種</div><div class="lbl">東方植萃<br>嚴選漢方</div></div>
+          <div class="ingr"><div class="pct">24hr</div><div class="lbl">長效保濕<br>鎖水時效</div></div>
+          <div class="ingr"><div class="pct">99%</div><div class="lbl">天然成分<br>低敏配方</div></div>
+          <div class="ingr"><div class="pct">0%</div><div class="lbl">無香料無色素<br>無礦物油</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-offers">
+    <div class="maxw">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其二 —<span class="hr"></span></div>
+        <h2>十 日 體 驗、兩 種 選 擇</h2>
+        <div class="en">依膚質挑選專屬的透光儀式</div>
+      </div>
+
+      <div class="cards">
+        <div class="a-card deep reveal">
+          <div class="ribbon">熱銷首選</div>
+          <div class="t-en">── 全 天 滋 潤 ──</div>
+          <h3>經 典・盈 潤 版</h3>
+          <div class="vol">30ml・10 日份・體驗版</div>
+          <div class="bot">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <ul class="bullets">
+              <li>豐潤質地，乾燥肌首選</li>
+              <li>夜間修護，晨起透亮</li>
+              <li>8 種漢方深度滋養</li>
+            </ul>
+          </div>
+          <div class="pills"><span class="pill">日本製造</span><span class="pill">全台免運</span></div>
+          <div class="price-row">
+            <div class="lbl">限時體驗</div>
+            <div class="old">NT$780</div>
+          </div>
+          <div class="price-big"><span class="cur">NT$</span>445</div>
+          <div class="price-note">※ 首購限定，每人限一組</div>
+          <div class="cta"><button class="btn-primary" onclick="openModal('classic')">立 即 申 請 體 驗<span class="arrow"></span></button></div>
+        </div>
+
+        <div class="a-card reveal d2">
+          <div class="ribbon">新上市</div>
+          <div class="t-en">── 輕 盈 質 地 ──</div>
+          <h3>全 新・輕 潤 版</h3>
+          <div class="vol">30ml・10 日份・體驗版</div>
+          <div class="bot">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <ul class="bullets">
+              <li>清爽水感，油性肌最愛</li>
+              <li>全新水斂輕潤質地</li>
+              <li>夏日適用，爽而不黏</li>
+            </ul>
+          </div>
+          <div class="pills"><span class="pill">日本製造</span><span class="pill">全台免運</span></div>
+          <div class="price-row">
+            <div class="lbl">限時體驗</div>
+            <div class="old">NT$780</div>
+          </div>
+          <div class="price-big"><span class="cur">NT$</span>445</div>
+          <div class="price-note">※ 首購限定，每人限一組</div>
+          <div class="cta"><button class="btn-primary" onclick="openModal('light')">立 即 申 請 體 驗<span class="arrow"></span></button></div>
+        </div>
+      </div>
+
+      <div class="a-timer reveal d3">
+        <div class="lbl">限 時 優 惠 倒 數</div>
+        <div class="clock">
+          <div class="cell"><div class="num" id="a-d">02</div><div class="unit">日</div></div>
+          <div class="colon">:</div>
+          <div class="cell"><div class="num" id="a-h">14</div><div class="unit">時</div></div>
+          <div class="colon">:</div>
+          <div class="cell"><div class="num" id="a-m">32</div><div class="unit">分</div></div>
+          <div class="colon">:</div>
+          <div class="cell"><div class="num" id="a-s">08</div><div class="unit">秒</div></div>
+        </div>
+        <div class="stock"><span class="dot"></span>本日名額僅剩 <strong style="margin:0 4px">37</strong> 組</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-trust">
+    <div class="maxw">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其三 —<span class="hr"></span></div>
+        <h2>選 擇 的 理 由</h2>
+        <div class="en">獲獎・專家認證・真實評價</div>
+      </div>
+      <div class="row">
+        <div class="badge reveal">
+          <div class="num">100<span class="small">萬</span></div>
+          <div class="lbl">台日銷售突破</div>
+          <div class="en">累 計 銷 量</div>
+        </div>
+        <div class="badge reveal d2">
+          <div class="num">96<span class="small">%</span></div>
+          <div class="lbl">使用後滿意度</div>
+          <div class="en">真 實 回 饋</div>
+        </div>
+        <div class="badge reveal d3">
+          <div class="num">FG<span class="small"></span></div>
+          <div class="lbl">專家評測認證</div>
+          <div class="en">權 威 推 薦</div>
+        </div>
+        <div class="badge reveal d4">
+          <div class="num">2022</div>
+          <div class="lbl">抗老大賞入選</div>
+          <div class="en">年 度 獲 獎</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-steps">
+    <div class="maxw">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其四 —<span class="hr"></span></div>
+        <h2>三 步 驟、啟 動 儀 式</h2>
+        <div class="en">申請簡單，體驗立即開始</div>
+      </div>
+      <div class="row">
+        <div class="step reveal">
+          <div class="n"><div class="small">步 驟</div><div class="big">01</div></div>
+          <h4>申 請 填 單</h4>
+          <p>線上填寫簡易表單<br>僅需 1 分鐘</p>
+        </div>
+        <div class="step reveal d2">
+          <div class="n"><div class="small">步 驟</div><div class="big">02</div></div>
+          <h4>直 送 到 府</h4>
+          <p>日本直送，全台免運<br>3-5 個工作日送達</p>
+        </div>
+        <div class="step reveal d3">
+          <div class="n"><div class="small">步 驟</div><div class="big">03</div></div>
+          <h4>體 驗 實 感</h4>
+          <p>每日一滴儀式<br>十日見證透光肌</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-reviews">
+    <div class="wrap">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其五 —<span class="hr"></span></div>
+        <h2>用 戶 的 聲 音</h2>
+        <div class="en">來自體驗者的真實回饋</div>
+      </div>
+      <div class="rgrid">
+        <div class="rcard reveal">
+          <div class="quote-mark">「</div>
+          <div class="stars">★★★★★</div>
+          <div class="rt">第三天開始，同事說我氣色變好了</div>
+          <p class="rb">原本以為 10 天太短，但第三天上妝時真的感覺底妝變服貼。質地不油不膩，夜間用的隔天早上整個臉會發光。已經下單正式瓶了。</p>
+          <div class="ruser"><span>林小姐．台北</span><span class="age">34y</span></div>
+        </div>
+        <div class="rcard reveal d2">
+          <div class="quote-mark">「</div>
+          <div class="stars">★★★★★</div>
+          <div class="rt">乾燥肌救星，終於找到對的了</div>
+          <p class="rb">冬天臉頰會脫皮乾裂，試過很多精華都太油。這款輕潤版吸收很快，不黏膩但又保濕。10 天用完沒有再脫皮，很驚喜。</p>
+          <div class="ruser"><span>Jennifer．台中</span><span class="age">29y</span></div>
+        </div>
+      </div>
+
+      <div class="a-beforeafter reveal d3">
+        <div class="ba b">
+          <div class="lbl">體 驗 前</div>
+          <div class="txt">肌底黯沉、膚色不均<br>細紋、毛孔明顯</div>
+        </div>
+        <div class="ba a">
+          <div class="lbl">十 日 後</div>
+          <div class="txt">肌底透亮、光澤感提升<br>膚質均勻細緻</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-notice">
+    <div class="wrap reveal">
+      <div class="box">
+        <div class="ico">注</div>
+        <div>
+          <h3>貼 心 提 醒</h3>
+          <ul>
+            <li>體驗版每個帳號僅限申請一次，分開下單視同第二次不予受理</li>
+            <li>若與家人共用，請以不同手機號碼申請，每人限一組</li>
+            <li>商品為 30ml／10 日份，申請後 3-5 個工作日內配送</li>
+            <li>如有任何疑問，歡迎撥打 24 小時免費客服專線洽詢</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-faq">
+    <div class="wrap">
+      <div class="a-section-head reveal">
+        <div class="num"><span class="hr"></span>— 其六 —<span class="hr"></span></div>
+        <h2>常 見 問 答</h2>
+        <div class="en">關於體驗版的疑問，為您一一解答</div>
+      </div>
+      <div class="reveal">
+        <div class="q"><div class="top"><div style="display:flex;gap:0;flex:1"><span class="qlbl">Q.01</span><span class="qt">我是敏感肌，可以使用嗎？</span></div><span class="ico"></span></div><div class="a"><div class="a-inner">本產品經皮膚科醫師監修，通過敏感肌測試。無香料、無色素、無酒精、無礦物油。首次使用建議先於耳後測試 24 小時，確認無不適再使用於全臉。</div></div></div>
+        <div class="q"><div class="top"><div style="display:flex;gap:0;flex:1"><span class="qlbl">Q.02</span><span class="qt">經典款與輕潤版要選哪一款？</span></div><span class="ico"></span></div><div class="a"><div class="a-inner">經典款質地豐潤，推薦乾燥肌、熟齡肌與秋冬使用；輕潤版水感清爽，推薦油性肌、混合肌與夏季使用。若不確定，可選擇當季適合的質地。</div></div></div>
+        <div class="q"><div class="top"><div style="display:flex;gap:0;flex:1"><span class="qlbl">Q.03</span><span class="qt">10 天後效果會消失嗎？</span></div><span class="ico"></span></div><div class="a"><div class="a-inner">10 日體驗旨在讓您感受質地與初步變化，肌膚的長期保養需要持續使用。體驗版使用期間，我們會提供正式瓶的優惠購買方案。</div></div></div>
+        <div class="q"><div class="top"><div style="display:flex;gap:0;flex:1"><span class="qlbl">Q.04</span><span class="qt">什麼時候會配送？運費如何計算？</span></div><span class="ico"></span></div><div class="a"><div class="a-inner">申請確認後 3-5 個工作日內由日本直送至您填寫的地址，全台免運費。出貨後將以簡訊通知物流單號，您可隨時追蹤進度。</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="a-final">
+    <div class="wrap reveal">
+      <h2>您 的 10 日，<br>光 感 <em>物 語</em> 由 此 啟 動。</h2>
+      <p>首購限定・限時 NT$445・日本直送・全台免運<br>體驗版每人限一組，本日名額有限。</p>
+      <button class="btn-primary" onclick="openModal()" style="font-size:17px;padding:24px 44px">立 即 申 請 10 日 體 驗<span class="arrow"></span></button>
+      <div class="pillrow">
+        <span class="p">日 本 製 造</span>
+        <span class="p">全 台 免 運</span>
+        <span class="p">7 日 鑑 賞 期</span>
+        <span class="p">安 心 試 用</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="a-foot">
+    <div class="wrap">
+      <div class="fgrid">
+        <div class="col">
+          <h5>客 服 專 線</h5>
+          <div class="phone">0800·321·555</div>
+          <div class="hours">服務時間：週一至週五 9:00–18:00<br>（國定假日除外）</div>
+        </div>
+        <div class="col">
+          <h5>聯 絡 我 們</h5>
+          <a href="#">線 上 聯 絡 客 服 →</a>
+          <div class="hours" style="margin-top:14px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d0e180f0b141e183d18051c100d1118531e1210">[email&#160;protected]</a></div>
+        </div>
+        <div class="col">
+          <h5>追 蹤 我 們</h5>
+          <div class="social">
+            <a>IG</a><a>FB</a><a>YT</a><a>LI</a>
+          </div>
+        </div>
+      </div>
+      <div class="brand-row">
+        <div class="logo"><em>三得利SUNTORY</em> 蜜得絲</div>
+        <div class="copy">© 2026 原創示範設計版本．品牌名稱為佔位符，請於交付前替換。</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ==================== VERSION B ==================== -->
+<div id="pageB" class="page" data-screen-label="02 大膽版">
+
+  <header class="b-topbar">
+    <div class="logo"><em>三得利SUNTORY</em> 蜜得絲</div>
+    <nav class="nav">
+      <span>產品</span><span>儀式</span><span>評價</span><span>問答</span>
+    </nav>
+    <div class="jlang">10 日 體 驗 版</div>
+  </header>
+
+  <section class="b-hero">
+    <div class="big-jp">透　光　的　儀　式</div>
+    <div class="maxw">
+      <div class="grid">
+        <div class="left reveal">
+          <div class="kicker"><span class="ln"></span><span class="txt">10 日 儀 式・源 自 日 本</span></div>
+          <h1>
+            還 沒 使 用 過<br>
+            <span class="line2">透 光 瓶 嗎 ？</span>
+          </h1>
+          <p class="strap">一日一滴的晨間儀式。來自日本百年工坊的琥珀精華，以 8 種東方植萃喚醒肌底光感，10 日見證你與光的距離。</p>
+          <div class="hero-cta">
+            <button class="btn-b" onclick="openModal()">申 請 體 驗 <span class="ar">→</span></button>
+            <a class="secondary" onclick="document.getElementById('b-offer').scrollIntoView({behavior:'smooth'})">了 解 方 案</a>
+          </div>
+        </div>
+
+        <div class="right reveal d2">
+          <div class="glow"></div>
+          <div class="meta-lines">
+            <div class="m">30 ml・10 日份</div>
+            <div class="m">日 本 製 造</div>
+            <div class="m">全 台 免 運</div>
+          </div>
+          <div class="bshape">
+            <div class="bottle-placeholder">
+              <div class="cap"></div>
+              <div class="nozzle"></div>
+              <div class="collar"></div>
+              <div class="body">
+                <div class="label">
+                  <div class="brand">三得利SUNTORY</div>
+                  <div><span class="dash"></span></div>
+                  <div class="sub">vitoas蜜得絲</div>
+                  <div class="line-italic">3 stories · 5 effects · 1 time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="price-tag">
+            <div class="lbl">限 定 體 驗 價</div>
+            <div class="p"><span class="cur">NT$</span>445</div>
+            <div class="sub">原價 NT$780・節省 43%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics maxw reveal d3">
+      <div class="cell"><div class="n">96<span class="s">%</span></div><div class="l">使 用 滿 意 度</div></div>
+      <div class="cell"><div class="n">100<span class="s">萬+</span></div><div class="l">台 日 銷 量 突 破</div></div>
+      <div class="cell"><div class="n">4.9<span class="s">/5</span></div><div class="l">會 員 真 實 評 分</div></div>
+      <div class="cell"><div class="n">24<span class="s">hr</span></div><div class="l">長 效 保 濕 時 效</div></div>
+    </div>
+  </section>
+
+  <div class="b-marquee">
+    <div class="track">
+      <span>透 光 的 儀 式</span><span class="dot">◆</span><span>日 本 製 造</span><span class="dot">◆</span>
+      <span>10 日 體 驗 版 限 定 NT$445</span><span class="dot">◆</span><span>全 台 免 運</span><span class="dot">◆</span>
+      <span>一 日 一 滴 的 物 語</span><span class="dot">◆</span>
+      <span>透 光 的 儀 式</span><span class="dot">◆</span><span>日 本 製 造</span><span class="dot">◆</span>
+      <span>10 日 體 驗 版 限 定 NT$445</span><span class="dot">◆</span><span>全 台 免 運</span><span class="dot">◆</span>
+      <span>一 日 一 滴 的 物 語</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <section class="b-story">
+    <div class="maxw">
+      <div class="row">
+        <div class="sidekick reveal">
+          <div class="vert">哲　學　與　素　材</div>
+          <div class="sec-num">01</div>
+          <div class="sec-lbl">── 核 心 理 念</div>
+        </div>
+        <div>
+          <h2 class="reveal">一 滴 之 中、<em>百 年 智 慧</em>。<br>為 肌 膚、留 下 光 的 記 憶。</h2>
+          <p class="lede reveal d2">時間是最珍貴的成分。京都老鋪百年配方，與北海道雪融水，相遇成一瓶琥珀色的光。每一次使用，都是一次與時間對話的儀式。</p>
+          <div class="feats reveal d3">
+            <div class="fcell">
+              <div class="head"><span class="fidx">i.</span><span class="jlab">透 光</span></div>
+              <h3>琥 珀 萃 取．透 光 複 合 物</h3>
+              <p>獨家三重透光成分，讓肌膚由內而外散發琥珀般的溫潤光澤。</p>
+              <div class="pct">×3</div>
+            </div>
+            <div class="fcell">
+              <div class="head"><span class="fidx">ii.</span><span class="jlab">潤 澤</span></div>
+              <h3>八 種 東 方 植 萃</h3>
+              <p>甘草、川芎、人參等 8 種漢方，深入肌底給予持久潤澤。</p>
+              <div class="pct">×8</div>
+            </div>
+            <div class="fcell">
+              <div class="head"><span class="fidx">iii.</span><span class="jlab">緻 密</span></div>
+              <h3>長 效 保 濕 時 效</h3>
+              <p>先進 24 小時鎖水科技，整日維持豐潤柔嫩的膚觸。</p>
+              <div class="pct">24<span class="s">hr</span></div>
+            </div>
+            <div class="fcell">
+              <div class="head"><span class="fidx">iv.</span><span class="jlab">安 心</span></div>
+              <h3>低 刺 激 敏 感 肌 配 方</h3>
+              <p>無香料・無色素・無酒精，皮膚科醫師監修，敏感肌可用。</p>
+              <div class="pct">0<span class="s">%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-ingr">
+    <div class="watermark">素 材</div>
+    <div class="maxw">
+      <div class="lbl-row reveal">
+        <div class="n">— 02　精 選 素 材</div>
+        <div class="c">源 自 日 本・純 粹 稀 有</div>
+      </div>
+      <h2 class="reveal">三 種 珍 貴 素 材、<br><em>深 入 肌 底</em>。</h2>
+      <div class="tray">
+        <div class="icard reveal">
+          <div class="imgbox" data-label="琥珀精華 · 素材示意"></div>
+          <div class="jp">琥 珀 精 華</div>
+          <h3>Amber Extract</h3>
+          <div class="en">── 光 的 記 憶</div>
+          <p>來自北海道的琥珀精華，富含稀有活化因子，為肌膚帶來如琥珀般的溫潤光澤與透明感。</p>
+        </div>
+        <div class="icard reveal d2">
+          <div class="imgbox" data-label="宇治綠茶 · 素材示意"></div>
+          <div class="jp">宇 治 綠 茶</div>
+          <h3>Uji Green Tea</h3>
+          <div class="en">── 鎮 靜 與 明 亮</div>
+          <p>京都宇治百年茶園低溫萃取，富含兒茶素與多酚，舒緩肌膚並帶來明亮清透感。</p>
+        </div>
+        <div class="icard reveal d3">
+          <div class="imgbox" data-label="雪融水 · 素材示意"></div>
+          <div class="jp">北 海 道 雪 融 水</div>
+          <h3>Snow-melt Water</h3>
+          <div class="en">── 純 粹 的 潤 澤</div>
+          <p>北海道高純度雪融水，分子細緻易於吸收，以最純粹的形式為肌膚補水鎖水。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-offer" id="b-offer">
+    <div class="maxw">
+      <div class="head reveal">
+        <div class="k">── 03　限 時 體 驗 版 ──</div>
+        <h2><span class="num">10</span> 日 體 驗、<br>兩 種 質 感。</h2>
+      </div>
+      <div class="tray2">
+        <div class="bcard reveal">
+          <div class="top">
+            <div>
+              <div class="jp">經 典 款</div>
+              <div class="t1">全 天 滋 潤．盈 潤 版</div>
+              <div class="vol">30ml / 10 日份</div>
+            </div>
+            <div class="badge">熱銷首選</div>
+          </div>
+          <div class="mid">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <div class="meta">
+              <div class="tags"><span>日 本 製 造</span><span>全 台 免 運</span></div>
+              <p>豐潤質地，推薦乾燥肌、熟齡肌。夜間深度修護，隔日晨起即見透亮光澤。</p>
+            </div>
+          </div>
+          <div class="bot">
+            <div class="pr-row">
+              <span class="old">NT$780</span>
+              <span class="off">− 43% OFF</span>
+            </div>
+            <div class="big"><span class="cur">NT$</span>445<span class="suf">／ 組</span></div>
+            <button class="cta-b" onclick="openModal('classic')">申 請 經 典 版 體 驗 <span class="ar">→</span></button>
+          </div>
+        </div>
+
+        <div class="bcard light reveal d2">
+          <div class="top">
+            <div>
+              <div class="jp">新 品・輕 潤 版</div>
+              <div class="t1">輕 盈 質 地．新 上 市</div>
+              <div class="vol">30ml / 10 日份</div>
+            </div>
+            <div class="badge">新 上 市</div>
+          </div>
+          <div class="mid">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <div class="meta">
+              <div class="tags"><span>日 本 製 造</span><span>全 台 免 運</span></div>
+              <p>全新水斂輕潤質地。清爽不黏膩，推薦油性肌、混合肌與夏季使用。</p>
+            </div>
+          </div>
+          <div class="bot">
+            <div class="pr-row">
+              <span class="old">NT$780</span>
+              <span class="off">− 43% OFF</span>
+            </div>
+            <div class="big"><span class="cur">NT$</span>445<span class="suf">／ 組</span></div>
+            <button class="cta-b" onclick="openModal('light')">申 請 輕 潤 版 體 驗 <span class="ar">→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="b-countdown reveal d3">
+        <div class="k">── 優 惠 倒 數 ──</div>
+        <h3>限 定．每 日 先 搶 100 組</h3>
+        <div class="clock">
+          <div class="c-cell"><div class="c-num" id="b-d">02</div><div class="c-unit">日</div></div>
+          <div class="c-cell"><div class="c-num" id="b-h">14</div><div class="c-unit">時</div></div>
+          <div class="c-cell"><div class="c-num" id="b-m">32</div><div class="c-unit">分</div></div>
+          <div class="c-cell"><div class="c-num" id="b-s">08</div><div class="c-unit">秒</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-trust2">
+    <div class="maxw">
+      <div class="head reveal">
+        <div class="k">── 04　獲 獎 與 認 證</div>
+        <h2>選 擇 的、是 信 任。</h2>
+      </div>
+      <div class="grid4 reveal d2">
+        <div class="tbox">
+          <div class="n">100<span class="s">萬</span></div>
+          <div class="l">台 日 銷 量 突 破</div>
+          <div class="e">── 累 計 銷 量</div>
+        </div>
+        <div class="tbox">
+          <div class="n">96<span class="s">%</span></div>
+          <div class="l">使 用 滿 意 度</div>
+          <div class="e">── 真 實 回 饋</div>
+        </div>
+        <div class="tbox">
+          <div class="n">FG<span class="s"></span></div>
+          <div class="l">專 家 評 測 認 證</div>
+          <div class="e">── 權 威 推 薦</div>
+        </div>
+        <div class="tbox">
+          <div class="n">4.9<span class="s">/5</span></div>
+          <div class="l">會 員 真 實 評 分</div>
+          <div class="e">── 年 度 大 賞</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-reviews2">
+    <div class="maxw">
+      <div class="head reveal">
+        <h2><em>用 戶 的 聲 音</em>、<br>十 日 間 的 記 錄。</h2>
+        <div class="meta">
+          <div class="rating">4.9<span class="s">/5</span></div>
+          <div class="stars">★★★★★</div>
+          <div class="cnt">累 計 2,384 則 評 價</div>
+        </div>
+      </div>
+      <div class="rgrid">
+        <div class="rcard2 reveal">
+          <div class="mark">「</div>
+          <div class="rt">第三天開始，同事主動問我去做了什麼</div>
+          <p class="rb">原本以為 10 天很短，但第三天底妝就變服貼，臉頰的暗沉真的淡了。夜間用的隔天早上整個臉會發光。已下單正式瓶。</p>
+          <div class="user"><span class="who">林小姐・台北</span><span class="age">34y</span></div>
+        </div>
+        <div class="rcard2 reveal d2">
+          <div class="mark">「</div>
+          <div class="rt">乾燥肌救星，終於不用層層堆疊</div>
+          <p class="rb">冬天兩頰會脫皮乾裂，試過很多精華都太油。這款輕潤版吸收很快，10 天用完真的沒有再脫皮，膚質穩定很多。</p>
+          <div class="user"><span class="who">Jennifer・台中</span><span class="age">29y</span></div>
+        </div>
+        <div class="rcard2 reveal d3">
+          <div class="mark">「</div>
+          <div class="rt">敏感肌也可以放心的一款</div>
+          <p class="rb">我的皮膚很挑剔，一般精華用了會刺。這款是我少數可以整張臉使用不紅不癢的。質地優雅，香氣淡淡的像日本茶室。</p>
+          <div class="user"><span class="who">陳小姐・高雄</span><span class="age">42y</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-steps2">
+    <div class="maxw">
+      <div class="head reveal">
+        <div class="k">── 05　申 請 流 程</div>
+        <h2>三 個 步 驟、十 日 旅 程。</h2>
+      </div>
+      <div class="line reveal d2">
+        <div class="sp">
+          <div class="circ"><div class="j">申 請</div><div class="n">01</div></div>
+          <h4>線 上 申 請</h4>
+          <p>簡易表單填寫<br>僅需 1 分鐘</p>
+        </div>
+        <div class="sp">
+          <div class="circ"><div class="j">配 送</div><div class="n">02</div></div>
+          <h4>日 本 直 送</h4>
+          <p>全台免運費<br>3-5 個工作日</p>
+        </div>
+        <div class="sp">
+          <div class="circ"><div class="j">體 驗</div><div class="n">03</div></div>
+          <h4>十 日 儀 式</h4>
+          <p>一日一滴<br>見證透光肌</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-faq2">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="k">── 06　常 見 問 答</div>
+        <h2>您 的 疑 問、為 您 解 答</h2>
+      </div>
+      <div class="reveal">
+        <div class="qq"><div class="top"><div class="l"><span class="idx">01</span><span class="t">我是敏感肌，可以使用嗎？</span></div><span class="ic"></span></div><div class="a"><div class="a-in">本產品經皮膚科醫師監修，通過敏感肌測試。無香料、無色素、無酒精、無礦物油。首次使用建議先於耳後測試 24 小時。</div></div></div>
+        <div class="qq"><div class="top"><div class="l"><span class="idx">02</span><span class="t">經典款與輕潤版要選哪一款？</span></div><span class="ic"></span></div><div class="a"><div class="a-in">經典款質地豐潤，推薦乾燥肌、熟齡肌、秋冬使用；輕潤版水感清爽，推薦油性肌、混合肌、夏季使用。</div></div></div>
+        <div class="qq"><div class="top"><div class="l"><span class="idx">03</span><span class="t">10 天體驗的效果會消失嗎？</span></div><span class="ic"></span></div><div class="a"><div class="a-in">10 日體驗旨在讓您感受質地與初步變化。肌膚的長期保養需要持續使用，體驗期間我們將提供正式瓶的優惠方案。</div></div></div>
+        <div class="qq"><div class="top"><div class="l"><span class="idx">04</span><span class="t">什麼時候會配送？運費如何計算？</span></div><span class="ic"></span></div><div class="a"><div class="a-in">申請確認後 3-5 個工作日內日本直送至您填寫的地址，全台免運費。出貨後將以簡訊通知物流單號。</div></div></div>
+        <div class="qq"><div class="top"><div class="l"><span class="idx">05</span><span class="t">可以重複申請嗎？</span></div><span class="ic"></span></div><div class="a"><div class="a-in">體驗版每個身分證字號與手機號碼僅限申請一次。若家人共用需以不同資料申請，每人限一組。</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-final2">
+    <div class="bg-text">體 驗</div>
+    <div class="inner reveal">
+      <div class="k">── 啟 動 您 的 儀 式 ──</div>
+      <h2>光 的 十 日、<br>今 日 <em>啟 程</em>。</h2>
+      <p>首購限定・限時 NT$445・日本直送・全台免運<br>每日先搶 100 組，體驗版每人限一組。</p>
+      <button class="big-btn" onclick="openModal()">立 即 申 請 10 日 體 驗 →</button>
+      <div class="dnote">申請後 3-5 個工作日內配送到府・7 日鑑賞期・安心試用</div>
+    </div>
+  </section>
+
+  <footer class="b-foot2">
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="fb-col">
+          <div class="lg"><em>三得利SUNTORY</em> vitoas蜜得絲</div>
+          <div class="desc">一日一滴的肌膚儀式。為現代女性打造優雅的晨間時光。</div>
+        </div>
+        <div class="fb-col">
+          <h5>聯 絡 我 們</h5>
+          <div class="phone">0800·321·555</div>
+          <div class="hours">週一至週五 9:00–18:00<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75061007031c161035100d14180519105b161a18">[email&#160;protected]</a></div>
+        </div>
+        <div class="fb-col">
+          <h5>選 單</h5>
+          <ul>
+            <li><a>產 品</a></li>
+            <li><a>儀 式</a></li>
+            <li><a>評 價</a></li>
+            <li><a>問 答</a></li>
+          </ul>
+        </div>
+        <div class="fb-col">
+          <h5>追 蹤 我 們</h5>
+          <div class="social2">
+            <a>IG</a><a>FB</a><a>YT</a><a>LI</a>
+          </div>
+        </div>
+      </div>
+      <div class="fcopy">
+        <div>© 2026 原創示範設計版本．品牌名稱為佔位符。</div>
+        <div>日 本 製 造・全 球 配 送</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ==================== APPLY MODAL ==================== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">✕</button>
+
+    <div class="mhead">
+      <div class="k">── 10 日 透 光 體 驗 ──</div>
+      <h3>申 請 10 日 體 驗 版</h3>
+      <p>限時 NT$445・全台免運・日本直送</p>
+    </div>
+
+    <div class="step-indicator">
+      <div class="sti active" data-i="1"><span class="nn">1</span><span class="ll">選 擇</span></div>
+      <div class="connector"></div>
+      <div class="sti" data-i="2"><span class="nn">2</span><span class="ll">資 料</span></div>
+      <div class="connector"></div>
+      <div class="sti" data-i="3"><span class="nn">3</span><span class="ll">完 成</span></div>
+    </div>
+
+    <div class="mstep on" data-step="1">
+      <div class="fg">
+        <label>請選擇您想體驗的版本 <span class="req">*</span></label>
+        <div class="choice-grid">
+          <div class="choice" data-product="classic" onclick="selectProduct('classic')">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <div class="cn">經典・盈潤版</div>
+            <div class="cp"><span class="cur">NT$</span>445</div>
+          </div>
+          <div class="choice" data-product="light" onclick="selectProduct('light')">
+            <div class="pshape">
+              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+            </div>
+            <div class="cn">全新・輕潤版</div>
+            <div class="cp"><span class="cur">NT$</span>445</div>
+          </div>
+        </div>
+      </div>
+      <div class="mbuttons">
+        <span></span>
+        <button class="next" id="next1" onclick="goStep(2)" disabled>下 一 步 →</button>
+      </div>
+    </div>
+
+    <div class="mstep" data-step="2">
+      <div class="fg">
+        <label>姓名 <span class="req">*</span></label>
+        <input type="text" placeholder="請輸入您的姓名" id="f-name">
+      </div>
+      <div class="fg">
+        <label>手機號碼 <span class="req">*</span></label>
+        <input type="tel" placeholder="09XX-XXX-XXX" id="f-phone">
+      </div>
+      <div class="fg">
+        <label>電子郵件 <span class="req">*</span></label>
+        <input type="email" placeholder="your@email.com" id="f-email">
+      </div>
+      <div class="fg">
+        <label>配送地址 <span class="req">*</span></label>
+        <input type="text" placeholder="請輸入詳細地址" id="f-addr">
+      </div>
+      <div class="mbuttons">
+        <button class="back" onclick="goStep(1)">← 返 回</button>
+        <button class="next" onclick="goStep(3)">下 一 步 →</button>
+      </div>
+    </div>
+
+    <div class="mstep" data-step="3">
+      <div class="success">
+        <div class="check">✓</div>
+        <h3>申 請 完 成</h3>
+        <p>感謝您的申請。訂單確認信已寄至您的信箱，<br>我們將於 3-5 個工作日內日本直送到府。</p>
+        <div class="summary">
+          <div class="row"><span class="k">商 品</span><span class="v" id="s-prod">—</span></div>
+          <div class="row"><span class="k">體 驗 價</span><span class="v">NT$445</span></div>
+          <div class="row"><span class="k">配 送</span><span class="v">全台免運・3-5 工作日</span></div>
+          <div class="row"><span class="k">訂 單 編 號</span><span class="v" id="s-oid">—</span></div>
+        </div>
+        <button class="next" style="margin:0 auto" onclick="closeModal()">繼 續 瀏 覽</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- floating CTA (only for Page A) -->
+<div class="float-cta" id="floatCta">
+  <div>
+    <div class="lbl" style="margin-bottom:2px">限 時 體 驗</div>
+    <div class="price"><span class="cur">NT$</span>445</div>
+  </div>
+  <button class="fbtn" onclick="openModal()">立 即 申 請 →</button>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
+  const btns=document.querySelectorAll('.switcher button');
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    const v=b.dataset.v;
+    btns.forEach(x=>x.classList.toggle('on',x===b));
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id==='page'+v));
+    localStorage.setItem('akane-v',v);
+    window.scrollTo({top:0,behavior:'instant'});
+    setTimeout(runReveal,60);
+    updateFloatVisibility();
+  }));
+  const saved=localStorage.getItem('akane-v');
+  if(saved){const btn=document.querySelector('.switcher button[data-v="'+saved+'"]');if(btn)btn.click();}
+
+  function runReveal(){
+    const els=document.querySelectorAll('.page.on .reveal');
+    els.forEach(el=>el.classList.remove('in'));
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      })
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+  runReveal();
+
+  function tick(){
+    const now=new Date();
+    const end=new Date(now.getTime());
+    end.setDate(end.getDate()+2);end.setHours(end.getHours()+14);end.setMinutes(end.getMinutes()+32);
+    const total=(end-now);
+    let s=Math.floor(total/1000);
+    const d=Math.floor(s/86400);s%=86400;
+    const h=Math.floor(s/3600);s%=3600;
+    const m=Math.floor(s/60);s%=60;
+    const pad=n=>String(n).padStart(2,'0');
+    ['a','b'].forEach(pre=>{
+      const els={d:document.getElementById(pre+'-d'),h:document.getElementById(pre+'-h'),m:document.getElementById(pre+'-m'),s:document.getElementById(pre+'-s')};
+      if(els.d){els.d.textContent=pad(d);els.h.textContent=pad(h);els.m.textContent=pad(m);els.s.textContent=pad(s);}
+    });
+  }
+  setInterval(tick,1000);tick();
+
+  document.querySelectorAll('.a-faq .q, .b-faq2 .qq').forEach(q=>{
+    q.addEventListener('click',()=>q.classList.toggle('open'));
+  });
+
+  let selected=null;
+  function openModal(prod){
+    document.getElementById('modal').classList.add('on');
+    document.body.style.overflow='hidden';
+    goStep(1);
+    if(prod){selectProduct(prod)}
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('on');
+    document.body.style.overflow='';
+    setTimeout(()=>{goStep(1);selected=null;document.querySelectorAll('.choice').forEach(c=>c.classList.remove('on'));document.getElementById('next1').disabled=true},300);
+  }
+  function selectProduct(p){
+    selected=p;
+    document.querySelectorAll('.choice').forEach(c=>c.classList.toggle('on',c.dataset.product===p));
+    document.getElementById('next1').disabled=false;
+  }
+  function goStep(n){
+    document.querySelectorAll('.mstep').forEach(s=>s.classList.toggle('on',+s.dataset.step===n));
+    document.querySelectorAll('.sti').forEach(s=>{
+      const i=+s.dataset.i;
+      s.classList.toggle('active',i===n);
+      s.classList.toggle('done',i<n);
+    });
+    if(n===3){
+      document.getElementById('s-prod').textContent=selected==='light'?'全新・輕潤版 30ml':'經典・盈潤版 30ml';
+      document.getElementById('s-oid').textContent='VT-'+String(Math.floor(Math.random()*90000)+10000);
+    }
+  }
+  document.getElementById('modal').addEventListener('click',(e)=>{if(e.target.id==='modal')closeModal()});
+
+  function updateFloatVisibility(){
+    const isA=document.getElementById('pageA').classList.contains('on');
+    document.getElementById('floatCta').style.display=isA?'flex':'none';
+  }
+  updateFloatVisibility();
+  window.addEventListener('scroll',()=>{
+    const fc=document.getElementById('floatCta');
+    if(!document.getElementById('pageA').classList.contains('on')){fc.classList.remove('show');return}
+    fc.classList.toggle('show',window.scrollY>700);
+  });
+</script>
+</body>
+</html>
