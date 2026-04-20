@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>三得利SUNTORY vitoas蜜得絲 — 10 日透光體驗版</title>
+<title>蜜得絲 vitoas  — 10 日透光體驗版</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -754,6 +754,318 @@
     .b-trust2 .grid4{grid-template-columns:1fr 1fr}
     .b-trust2 .tbox:nth-child(2){border-right:0}
   }
+
+  /* ============ MOBILE RESPONSIVE ============ */
+  @media (max-width:768px){
+    .switcher{top:10px;padding:3px}
+    .switcher button{padding:7px 12px;font-size:11px;letter-spacing:.08em}
+
+    .a-topbar{padding:70px 20px 16px;flex-direction:column;gap:10px;align-items:center;text-align:center}
+    .a-topbar .brand{font-size:18px;letter-spacing:.2em}
+    .a-topbar .meta{gap:14px;font-size:10px;letter-spacing:.12em;flex-wrap:wrap;justify-content:center}
+    .a-topbar .meta span:before{margin-right:4px}
+
+    .a-hero{padding:50px 0 70px}
+    .a-hero .grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
+    .a-hero .jp-vertical{display:none}
+    .a-hero .left{text-align:center}
+    .a-hero .kicker{font-size:12px;letter-spacing:.2em}
+    .a-hero h1{font-size:30px;line-height:1.35}
+    .a-hero .sub{font-size:14px;line-height:1.9}
+    .a-hero .tag-row{justify-content:center;flex-wrap:wrap}
+    .a-hero .tag{font-size:10px;padding:5px 10px}
+    .a-hero .product{padding:0}
+    .a-hero .product img{max-width:200px!important}
+    .a-hero .stamp{width:74px;height:74px;right:20px;top:-6px}
+    .a-hero .stamp .n{font-size:22px}
+    .a-hero .stamp .t,.a-hero .stamp .t2{font-size:9px;letter-spacing:.15em}
+    .a-hero .right{padding:0}
+    .a-hero .right .feat{padding:12px 0}
+    .a-hero .right .feat .idx{font-size:22px;min-width:26px}
+    .a-hero .right .feat .t{font-size:14px}
+    .a-hero .right .feat .d{font-size:11px}
+    .a-hero .scroll-hint{display:none}
+
+    .a-section-head{padding-bottom:30px}
+    .a-section-head h2{font-size:24px;letter-spacing:.08em}
+    .a-section-head .en{font-size:12px;letter-spacing:.2em}
+    .a-section-head .num{font-size:12px}
+
+    .a-benefits{padding:64px 0}
+    .a-benefits .bgrid{grid-template-columns:1fr}
+    .a-benefits .bcell{padding:32px 24px}
+    .a-benefits .bcell h3{font-size:20px}
+    .a-benefits .bcell p{font-size:13px;line-height:1.8}
+    .a-benefits .bcell .icon{width:52px;height:52px;font-size:18px}
+
+    .a-story{padding:64px 0}
+    .a-story .row{grid-template-columns:1fr;gap:36px;padding:0 24px}
+    .a-story h2{font-size:24px;line-height:1.5}
+    .a-story p{font-size:14px;line-height:1.9}
+    .a-story .imgbox{aspect-ratio:16/10}
+    .a-story .ingr-list{gap:10px}
+    .a-story .ingr{padding:10px 14px}
+    .a-story .ingr .pct{font-size:20px;min-width:44px}
+    .a-story .ingr .lbl{font-size:11px}
+
+    .a-offers{padding:64px 0}
+    .a-offers .cards{grid-template-columns:1fr;gap:20px;padding:0 24px}
+    .a-card{padding:32px 24px 28px}
+    .a-card h3{font-size:22px}
+    .a-card .ribbon{font-size:10px;padding:3px 28px;top:16px;right:-32px}
+    .a-card .bot{flex-direction:row;gap:14px}
+    .a-card .bot .pshape{width:60px}
+    .a-card .bot .bullets li{font-size:12px}
+    .a-card .price-big{font-size:52px}
+    .a-card .price-big .cur{font-size:20px}
+    .a-card .cta .btn-primary{padding:16px 24px;font-size:13px;letter-spacing:.15em;gap:10px}
+    .a-card .cta .btn-primary .arrow{width:20px}
+
+    .a-timer{margin-top:40px;padding:0 24px}
+    .a-timer .lbl{font-size:11px;letter-spacing:.3em}
+    .a-timer .clock{gap:10px}
+    .a-timer .num{font-size:36px}
+    .a-timer .unit{font-size:10px}
+    .a-timer .colon{font-size:30px}
+    .a-timer .stock{font-size:11px;padding:6px 14px}
+
+    .a-trust{padding:64px 0}
+    .a-trust .row{grid-template-columns:1fr 1fr;gap:12px;padding:0 20px;margin-top:24px}
+    .a-trust .badge{padding:18px}
+    .a-trust .badge .num{font-size:38px}
+    .a-trust .badge .num .small{font-size:16px}
+    .a-trust .badge .lbl{font-size:11px;margin-top:10px}
+    .a-trust .badge .en{font-size:9px}
+
+    .a-steps{padding:64px 0}
+    .a-steps .row{grid-template-columns:1fr;gap:24px;padding:0 40px}
+    .a-steps .row:before{display:none}
+    .a-steps .step .n{width:86px;height:86px;margin-bottom:16px}
+    .a-steps .step .n .big{font-size:28px}
+    .a-steps .step .n .small{font-size:10px}
+    .a-steps .step h4{font-size:16px}
+    .a-steps .step p{font-size:12px}
+
+    .a-reviews{padding:64px 0}
+    .a-reviews .wrap{padding:0 24px}
+    .a-reviews .rgrid{grid-template-columns:1fr;gap:16px;margin-top:24px}
+    .a-reviews .rcard{padding:28px 22px}
+    .a-reviews .rt{font-size:16px}
+    .a-reviews .rb{font-size:13px;line-height:1.9}
+    .a-reviews .ruser{font-size:11px}
+    .a-beforeafter{margin-top:40px;grid-template-columns:1fr}
+    .a-beforeafter .ba{aspect-ratio:3/2}
+    .a-beforeafter .ba .lbl{font-size:11px;padding:4px 12px}
+    .a-beforeafter .ba .txt{font-size:12px}
+
+    .a-notice{padding:48px 0}
+    .a-notice .wrap{padding:0 24px}
+    .a-notice .box{padding:24px;grid-template-columns:1fr;gap:14px}
+    .a-notice .box .ico{width:44px;height:44px;font-size:16px}
+    .a-notice h3{font-size:17px}
+    .a-notice li{font-size:12px}
+
+    .a-faq{padding:64px 0}
+    .a-faq .wrap{padding:0 24px}
+    .a-faq .q{padding:18px 0}
+    .a-faq .q .qt{font-size:14px}
+    .a-faq .q .qlbl{font-size:14px;margin-right:8px}
+    .a-faq .q .a{margin-left:24px}
+    .a-faq .q .a-inner{font-size:12px;line-height:1.9}
+
+    .a-final{padding:80px 0}
+    .a-final:before{font-size:130px}
+    .a-final .wrap{padding:0 24px}
+    .a-final h2{font-size:26px;letter-spacing:.04em}
+    .a-final p{font-size:13px;margin-bottom:28px}
+    .a-final .btn-primary{padding:18px 26px!important;font-size:13px!important;letter-spacing:.15em}
+    .a-final .pillrow .p{font-size:10px;padding:4px 10px;letter-spacing:.15em}
+
+    .a-foot{padding:40px 0 28px}
+    .a-foot .wrap{padding:0 24px}
+    .a-foot .fgrid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}
+    .a-foot .col .phone{font-size:28px}
+    .a-foot .brand-row{flex-direction:column;text-align:center;gap:12px}
+
+    .b-topbar{padding:16px 20px;flex-direction:column;gap:10px;text-align:center;position:relative}
+    .b-topbar .logo{font-size:18px;letter-spacing:.22em}
+    .b-topbar .nav{display:none}
+    .b-topbar .jlang{font-size:11px}
+
+    .b-hero{padding:30px 0 50px;min-height:auto}
+    .b-hero .maxw{padding:0 24px}
+    .b-hero .big-jp{display:none}
+    .b-hero .grid{grid-template-columns:1fr;gap:30px;min-height:auto}
+    .b-hero .kicker .txt{font-size:11px;letter-spacing:.22em}
+    .b-hero .kicker .ln{width:24px}
+    .b-hero h1{font-size:40px;line-height:1.15}
+    .b-hero .strap{font-size:14px;line-height:1.9;margin-top:20px}
+    .b-hero .hero-cta{margin-top:28px;gap:18px}
+    .b-hero .btn-b{padding:16px 24px;font-size:13px;letter-spacing:.2em}
+    .b-hero .secondary{font-size:12px}
+    .b-hero .right{min-height:auto;padding:20px 0}
+    .b-hero .right img{max-width:200px!important;width:60%}
+    .b-hero .right .meta-lines{position:static;text-align:center;flex-direction:row;justify-content:center;gap:14px;margin-bottom:16px}
+    .b-hero .right .meta-lines .m{font-size:9px;letter-spacing:.15em}
+    .b-hero .price-tag{position:static;margin:20px auto 0;display:inline-block;transform:rotate(-2deg)}
+    .b-hero .price-tag .p{font-size:30px}
+    .b-hero .price-tag .p .cur{font-size:14px}
+    .b-hero .metrics{position:static;grid-template-columns:1fr 1fr;padding:20px 24px 0;gap:16px;margin-top:30px}
+    .b-hero .metrics .cell{padding-left:14px}
+    .b-hero .metrics .cell:nth-child(3){border-left:0;padding-left:0}
+    .b-hero .metrics .n{font-size:28px}
+    .b-hero .metrics .n .s{font-size:12px}
+    .b-hero .metrics .l{font-size:10px;letter-spacing:.15em}
+
+    .b-marquee{padding:14px 0}
+    .b-marquee .track{font-size:11px;letter-spacing:.2em;gap:24px}
+
+    .b-story{padding:64px 0}
+    .b-story .maxw{padding:0 24px}
+    .b-story .row{grid-template-columns:1fr;gap:30px}
+    .b-story .sidekick{position:static}
+    .b-story .sidekick .vert{writing-mode:horizontal-tb;font-size:12px;margin-bottom:8px;letter-spacing:.3em}
+    .b-story .sidekick .sec-num{font-size:48px}
+    .b-story h2{font-size:26px;line-height:1.5}
+    .b-story .lede{font-size:14px;line-height:1.9;margin-bottom:32px}
+    .b-story .feats{grid-template-columns:1fr}
+    .b-story .fcell{padding:24px 22px}
+    .b-story .fcell h3{font-size:17px}
+    .b-story .fcell p{font-size:12px}
+    .b-story .fcell .pct{font-size:32px;margin-top:12px}
+
+    .b-ingr{padding:64px 0}
+    .b-ingr .maxw{padding:0 24px}
+    .b-ingr .watermark{font-size:90px;top:20px;right:-20px}
+    .b-ingr h2{font-size:26px;line-height:1.4;margin-bottom:30px}
+    .b-ingr .lbl-row{margin-bottom:24px}
+    .b-ingr .lbl-row .n,.b-ingr .lbl-row .c{font-size:10px;letter-spacing:.2em}
+    .b-ingr .tray{grid-template-columns:1fr;gap:16px}
+    .b-ingr .icard{padding:24px}
+    .b-ingr .icard h3{font-size:18px}
+    .b-ingr .icard p{font-size:12px;line-height:1.85}
+
+    .b-offer{padding:64px 0}
+    .b-offer .maxw{padding:0 24px}
+    .b-offer .head{margin-bottom:40px}
+    .b-offer .head h2{font-size:28px;line-height:1.4}
+    .b-offer .head h2 .num{font-size:40px}
+    .b-offer .head .k{font-size:11px;letter-spacing:.3em}
+    .b-offer .tray2{grid-template-columns:1fr;gap:20px}
+    .b-offer .bcard .top{padding:24px 22px 20px;flex-wrap:wrap}
+    .b-offer .bcard .top .t1{font-size:20px}
+    .b-offer .bcard .top .badge{font-size:10px;padding:6px 12px;letter-spacing:.2em}
+    .b-offer .bcard .mid{padding:24px 22px;grid-template-columns:auto 1fr;gap:18px}
+    .b-offer .bcard .mid .pshape{width:70px}
+    .b-offer .bcard .mid .meta p{font-size:12px}
+    .b-offer .bcard .bot{padding:20px 22px 24px}
+    .b-offer .bcard .bot .big{font-size:50px}
+    .b-offer .bcard .bot .big .cur{font-size:18px}
+    .b-offer .bcard .bot .big .suf{font-size:13px}
+    .b-offer .bcard .bot .cta-b{padding:16px;font-size:13px;letter-spacing:.2em}
+    .b-countdown{margin-top:40px;padding:24px 20px}
+    .b-countdown h3{font-size:16px;letter-spacing:.06em}
+    .b-countdown .clock{gap:8px}
+    .b-countdown .c-cell{min-width:56px}
+    .b-countdown .c-num{font-size:34px}
+    .b-countdown .c-unit{font-size:10px}
+
+    .b-trust2{padding:64px 0}
+    .b-trust2 .maxw{padding:0 24px}
+    .b-trust2 .head{margin-bottom:40px}
+    .b-trust2 .head h2{font-size:28px}
+    .b-trust2 .head .k{font-size:11px}
+    .b-trust2 .grid4{grid-template-columns:1fr 1fr}
+    .b-trust2 .tbox{padding:26px 14px}
+    .b-trust2 .tbox:nth-child(2){border-right:0}
+    .b-trust2 .tbox:nth-child(-n+2){border-bottom:1px solid rgba(233,226,212,.15)}
+    .b-trust2 .tbox .n{font-size:44px}
+    .b-trust2 .tbox .n .s{font-size:18px}
+    .b-trust2 .tbox .l{font-size:12px;margin-top:10px;letter-spacing:.08em}
+    .b-trust2 .tbox .e{font-size:9px;letter-spacing:.15em}
+
+    .b-reviews2{padding:64px 0}
+    .b-reviews2 .maxw{padding:0 24px}
+    .b-reviews2 .head{margin-bottom:30px;flex-direction:column;align-items:flex-start;gap:20px}
+    .b-reviews2 .head h2{font-size:26px;line-height:1.45}
+    .b-reviews2 .head .meta{text-align:left;display:flex;align-items:baseline;gap:14px}
+    .b-reviews2 .head .meta .rating{font-size:40px}
+    .b-reviews2 .head .meta .cnt{margin-top:0;font-size:10px}
+    .b-reviews2 .rgrid{grid-template-columns:1fr;gap:16px}
+    .b-reviews2 .rcard2{padding:26px 22px}
+    .b-reviews2 .rcard2 .rt{font-size:16px}
+    .b-reviews2 .rcard2 .rb{font-size:12px;line-height:1.9}
+
+    .b-steps2{padding:64px 0}
+    .b-steps2 .maxw{padding:0 24px}
+    .b-steps2 .head{margin-bottom:40px}
+    .b-steps2 .head h2{font-size:28px}
+    .b-steps2 .line{grid-template-columns:1fr;gap:30px}
+    .b-steps2 .line:before{display:none}
+    .b-steps2 .sp .circ{width:76px;height:76px;margin-bottom:16px}
+    .b-steps2 .sp .circ .n{font-size:24px}
+    .b-steps2 .sp h4{font-size:16px}
+    .b-steps2 .sp p{font-size:12px}
+
+    .b-faq2{padding:64px 0}
+    .b-faq2 .wrap{padding:0 24px}
+    .b-faq2 .head{margin-bottom:36px}
+    .b-faq2 .head h2{font-size:26px}
+    .b-faq2 .qq{padding:20px 0}
+    .b-faq2 .qq .t{font-size:14px;line-height:1.5}
+    .b-faq2 .qq .idx{font-size:14px}
+    .b-faq2 .qq .a{margin-left:28px}
+    .b-faq2 .qq .a-in{font-size:12px;line-height:1.9}
+
+    .b-final2{padding:80px 0}
+    .b-final2 .bg-text{font-size:140px}
+    .b-final2 .inner{padding:0 24px}
+    .b-final2 h2{font-size:36px;line-height:1.25}
+    .b-final2 p{font-size:13px;line-height:1.9;margin-bottom:30px}
+    .b-final2 .k{font-size:11px;letter-spacing:.25em}
+    .b-final2 .big-btn{padding:18px 32px;font-size:13px;letter-spacing:.2em}
+    .b-final2 .big-btn:hover{letter-spacing:.22em}
+    .b-final2 .dnote{font-size:10px;letter-spacing:.12em}
+
+    .b-foot2{padding:40px 0 28px}
+    .b-foot2 .wrap{padding:0 24px}
+    .b-foot2 .f-grid{grid-template-columns:1fr;gap:24px;padding-bottom:28px}
+    .b-foot2 .fcopy{flex-direction:column;text-align:center;gap:8px}
+
+    .modal{padding:30px 22px 26px;border-radius:3px}
+    .modal .mhead{margin-bottom:20px;padding-bottom:16px}
+    .modal .mhead h3{font-size:20px}
+    .modal .mhead p{font-size:11px}
+    .modal .mhead .k{font-size:11px;letter-spacing:.25em}
+    .modal .step-indicator{gap:6px;margin-bottom:20px}
+    .modal .sti .ll{display:none}
+    .modal .connector{width:14px}
+    .modal .choice-grid{grid-template-columns:1fr;gap:10px}
+    .modal .choice{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;text-align:left;padding:14px}
+    .modal .choice .pshape,.modal .choice img{margin:0;width:40px}
+    .modal .choice .cn{margin-bottom:2px;font-size:13px}
+    .modal .choice .cp{font-size:18px}
+    .modal .fg label{font-size:12px}
+    .modal .fg input,.modal .fg select{padding:12px 14px;font-size:14px}
+    .modal .mbuttons .next{padding:12px 22px;font-size:12px;letter-spacing:.2em}
+    .modal .mbuttons .back{font-size:13px}
+    .modal .success .check{width:60px;height:60px;font-size:24px;margin-bottom:18px}
+    .modal .success h3{font-size:18px}
+    .modal .success p{font-size:12px}
+    .modal .success .summary{padding:16px}
+    .modal .success .summary .row{font-size:12px}
+
+    .float-cta{padding:6px 6px 6px 20px;gap:14px;bottom:12px}
+    .float-cta .lbl{font-size:10px;letter-spacing:.15em}
+    .float-cta .price{font-size:20px}
+    .float-cta .price .cur{font-size:11px}
+    .float-cta .fbtn{padding:10px 16px;font-size:11px;letter-spacing:.15em}
+  }
+
+  @media (max-width:420px){
+    .a-hero h1{font-size:26px}
+    .b-hero h1{font-size:34px}
+  }
 </style>
 </head>
 <body>
@@ -767,7 +1079,7 @@
 <div id="pageA" class="page on" data-screen-label="01 保守版">
 
   <header class="a-topbar">
-    <div class="brand"><em>三得利SUNTORY</em> vitoas蜜得絲</div>
+    <div class="brand"><em>三得利</em> 蜜得絲</div>
     <div class="meta">
       <span>日本製造</span>
       <span>全台免運</span>
@@ -797,19 +1109,7 @@
           <div class="t2">天體驗</div>
           <div class="t">限 時 優 惠</div>
         </div>
-        <img src="VT.png" alt="vitoas" style="width:100%;max-width:280px;margin:0 auto;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
-          <div class="cap"></div>
-          <div class="nozzle"></div>
-          <div class="collar"></div>
-          <div class="body">
-            <div class="label">
-              <div class="brand">三得利SUNTORY</div>
-              <div><span class="dash"></span></div>
-              <div class="sub">vitoas蜜得絲</div>
-              <div class="line-italic">3 stories · 5 effects · 1 time</div>
-            </div>
-          </div>
-        </div>
+        <img src="VT.png" alt="product" style="width:100%;max-width:260px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
       </div>
 
       <div class="right reveal d3">
@@ -914,7 +1214,7 @@
           <div class="vol">30ml・10 日份・體驗版</div>
           <div class="bot">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <ul class="bullets">
               <li>豐潤質地，乾燥肌首選</li>
@@ -939,7 +1239,7 @@
           <div class="vol">30ml・10 日份・體驗版</div>
           <div class="bot">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <ul class="bullets">
               <li>清爽水感，油性肌最愛</li>
@@ -1128,7 +1428,7 @@
         <div class="col">
           <h5>聯 絡 我 們</h5>
           <a href="#">線 上 聯 絡 客 服 →</a>
-          <div class="hours" style="margin-top:14px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d0e180f0b141e183d18051c100d1118531e1210">[email&#160;protected]</a></div>
+          <div class="hours" style="margin-top:14px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43302631352a202603263b222e332f266d202c2e">[email&#160;protected]</a></div>
         </div>
         <div class="col">
           <h5>追 蹤 我 們</h5>
@@ -1138,7 +1438,7 @@
         </div>
       </div>
       <div class="brand-row">
-        <div class="logo"><em>三得利SUNTORY</em> 蜜得絲</div>
+        <div class="logo"><em>三得利</em> 蜜得絲</div>
         <div class="copy">© 2026 原創示範設計版本．品牌名稱為佔位符，請於交付前替換。</div>
       </div>
     </div>
@@ -1150,7 +1450,7 @@
 <div id="pageB" class="page" data-screen-label="02 大膽版">
 
   <header class="b-topbar">
-    <div class="logo"><em>三得利SUNTORY</em> 蜜得絲</div>
+    <div class="logo"><em>三得利</em> 蜜得絲</div>
     <nav class="nav">
       <span>產品</span><span>儀式</span><span>評價</span><span>問答</span>
     </nav>
@@ -1182,19 +1482,7 @@
             <div class="m">全 台 免 運</div>
           </div>
           <div class="bshape">
-            <div class="bottle-placeholder">
-              <div class="cap"></div>
-              <div class="nozzle"></div>
-              <div class="collar"></div>
-              <div class="body">
-                <div class="label">
-                  <div class="brand">三得利SUNTORY</div>
-                  <div><span class="dash"></span></div>
-                  <div class="sub">vitoas蜜得絲</div>
-                  <div class="line-italic">3 stories · 5 effects · 1 time</div>
-                </div>
-              </div>
-            </div>
+            <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
           </div>
           <div class="price-tag">
             <div class="lbl">限 定 體 驗 價</div>
@@ -1318,7 +1606,7 @@
           </div>
           <div class="mid">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <div class="meta">
               <div class="tags"><span>日 本 製 造</span><span>全 台 免 運</span></div>
@@ -1346,7 +1634,7 @@
           </div>
           <div class="mid">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <div class="meta">
               <div class="tags"><span>日 本 製 造</span><span>全 台 免 運</span></div>
@@ -1498,13 +1786,13 @@
     <div class="wrap">
       <div class="f-grid">
         <div class="fb-col">
-          <div class="lg"><em>三得利SUNTORY</em> vitoas蜜得絲</div>
+          <div class="lg"><em>三得利</em> 蜜得絲</div>
           <div class="desc">一日一滴的肌膚儀式。為現代女性打造優雅的晨間時光。</div>
         </div>
         <div class="fb-col">
           <h5>聯 絡 我 們</h5>
           <div class="phone">0800·321·555</div>
-          <div class="hours">週一至週五 9:00–18:00<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75061007031c161035100d14180519105b161a18">[email&#160;protected]</a></div>
+          <div class="hours">週一至週五 9:00–18:00<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afdccaddd9c6cccaefcad7cec2dfc3ca81ccc0c2">[email&#160;protected]</a></div>
         </div>
         <div class="fb-col">
           <h5>選 單</h5>
@@ -1556,14 +1844,14 @@
         <div class="choice-grid">
           <div class="choice" data-product="classic" onclick="selectProduct('classic')">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <div class="cn">經典・盈潤版</div>
             <div class="cp"><span class="cur">NT$</span>445</div>
           </div>
           <div class="choice" data-product="light" onclick="selectProduct('light')">
             <div class="pshape">
-              <img src="VT.png" alt="vitoas" style="width:100%;display:block;filter:drop-shadow(0 24px 40px rgba(200,80,20,.3))">
+              <img src="VT.png" alt="product" style="width:100%;max-width:100px;margin:0 auto;display:block;filter:drop-shadow(0 20px 34px rgba(200,80,20,.28))">
             </div>
             <div class="cn">全新・輕潤版</div>
             <div class="cp"><span class="cur">NT$</span>445</div>
